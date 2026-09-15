@@ -24,7 +24,7 @@ Hands-on session 2, 7th EnzymeML Workshop. Deck: `slides/workshop.pptx`.
 
 ## Live demo script, task 1
 
-1. Open Colab, run the first cell while talking (2 min of install time is the moment to explain
+1. Open the starter notebook (notebooks/00_start_here.ipynb) in Colab, run the first cell while talking (30 s of install time is the moment to explain
    the two cards).
 2. Paste `briefs/chromhandler.md`, then `briefs/task_1_chromatograms_to_enzymeml.md`, then
    "Let's start with task 1."

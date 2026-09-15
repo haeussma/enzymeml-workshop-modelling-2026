@@ -1,7 +1,7 @@
 # From HPLC chromatograms to enzyme kinetics, with an AI assistant
 
 In this workshop you turn raw HPLC data of a real enzyme into kinetic parameters
-(`kcat`, `Km`). An AI chat assistant writes the code; **you make the scientific decisions and
+(`kcat`, `Km`). An AI assistant writes and runs the code; **you make the scientific decisions and
 check the results.** No programming experience is needed.
 
 You will:
@@ -28,93 +28,59 @@ Neu5Ac synthase (NeuS) condenses two substrates into sialic acid:
 
 ![ManNAc + PEP → Neu5Ac + Pi](slides/figures/reaction_scheme.png)
 
-Product formation was followed by HPLC. In one series ManNAc was varied (13 reactions), in the
-other PEP (11 reactions); each reaction was sampled six times. Five calibration standards contain
-known amounts of Neu5Ac. Details, including where Neu5Ac elutes: [data/README.md](data/README.md).
+Product formation was followed by HPLC; the instrument software exported one peak table per
+injection, and those exports plus the initial concentrations are the data. Details, including
+where Neu5Ac elutes: [data/README.md](data/README.md).
 
-## Install on your own computer
+## How the workshop works
 
-Works on Linux, macOS and Windows with Python 3.11–3.13. Pick one of the three ways; each ends
-with JupyterLab open on the notebooks.
+Everything the assistant needs is in `briefs/`, as one-page cards: a **tool card** tells it how to
+use Chromhandler or Catalax, a **task card** tells it what you want from this dataset. You paste
+both into the assistant, run the code it writes, and answer the questions of the task.
 
-**uv** (recommended; installs the right Python for you). Install
-[uv](https://docs.astral.sh/uv/getting-started/installation/), then:
+### 1. Choose where the code runs
 
-```bash
-git clone https://github.com/haeussma/enzymeml-workshop-modelling-2026
-```
+- **In the browser, with a chat assistant** (ChatGPT, Claude, Gemini, …): open the starter
+  notebook in Google Colab
+  [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/00_start_here.ipynb)
+  (Google account needed; click *Run anyway* on Colab's warning). Its first cell installs the
+  tools and downloads the data, about 30 s. Paste the code the assistant writes into new cells
+  and run them; paste errors and outputs back into the chat. Colab's own Gemini panel (the ✨
+  icon) can be the assistant.
+- **On your computer, with a coding agent** (Claude Code, Codex, Cursor, …): clone the
+  repository and point the agent at the cards. It installs the tools itself; the tool cards say
+  how, in a fresh virtual environment with the pinned versions.
 
-```bash
-cd enzymeml-workshop-modelling-2026 && uv sync && uv run jupyter lab notebooks
-```
+  ```bash
+  git clone https://github.com/haeussma/enzymeml-workshop-modelling-2026
+  ```
 
-**pip and venv** (a Python 3.11–3.13 is already installed):
+### 2. Give the assistant the cards
 
-```bash
-git clone https://github.com/haeussma/enzymeml-workshop-modelling-2026 && cd enzymeml-workshop-modelling-2026
-```
+| Task | Tool card | Task card | You get |
+| --- | --- | --- | --- |
+| 1. Chromatograms → EnzymeML | [briefs/chromhandler.md](briefs/chromhandler.md) | [briefs/task_1_chromatograms_to_enzymeml.md](briefs/task_1_chromatograms_to_enzymeml.md) | calibrated Neu5Ac time courses of every reaction, as an EnzymeML document |
+| 2. Kinetic model | [briefs/catalax.md](briefs/catalax.md) | [briefs/task_2_kinetic_model.md](briefs/task_2_kinetic_model.md) | posterior distributions of `kcat`, `Km_ManNAc`, `Km_PEP`, with corner and fit plots |
 
-```bash
-python -m venv .venv && source .venv/bin/activate
-```
+Paste the tool card, then the task card, then write: *Let's start with task 1.*
 
-On Windows the second command is `python -m venv .venv; .venv\Scripts\activate`. Then:
+### 3. Run, look, decide
 
-```bash
-pip install chromhandler==0.10.11 catalax==0.5.5 jupyterlab && jupyter lab notebooks
-```
-
-**conda or mamba**:
-
-```bash
-git clone https://github.com/haeussma/enzymeml-workshop-modelling-2026 && cd enzymeml-workshop-modelling-2026
-```
-
-```bash
-conda create -n enzymeml-workshop python=3.12 -y && conda activate enzymeml-workshop
-```
-
-```bash
-pip install chromhandler==0.10.11 catalax==0.5.5 jupyterlab && jupyter lab notebooks
-```
-
-Check the installation in any of the three:
-
-```bash
-python -c "import chromhandler, catalax; print(chromhandler.__version__, catalax.__version__)"
-```
-
-It should print `0.10.11 0.5.5`. Coding agents (Claude Code, Codex, Cursor, ...) can use the tool
-cards directly: copy `briefs/chromhandler.md` and `briefs/catalax.md` into the agent's
-instructions (`AGENTS.md`, `CLAUDE.md` or a `SKILL.md`).
-
-## The tasks
-
-Each task has a **tool card** (tells the assistant how to use the tool) and a **task card**
-(tells it what you want). Paste both into the chat.
-
-| Task | Result | Tool card | Task card | Reference solution |
-| --- | --- | --- | --- | --- |
-| 1. Chromatograms → EnzymeML | calibrated Neu5Ac time courses of 24 reactions | [briefs/chromhandler.md](briefs/chromhandler.md) | [briefs/task_1_chromatograms_to_enzymeml.md](briefs/task_1_chromatograms_to_enzymeml.md) | [notebooks/01_hplc_to_enzymeml.ipynb](notebooks/01_hplc_to_enzymeml.ipynb) |
-| 2. Kinetic model | posterior distributions of `kcat`, `Km_ManNAc`, `Km_PEP`, with corner and fit plots | [briefs/catalax.md](briefs/catalax.md) | [briefs/task_2_kinetic_model.md](briefs/task_2_kinetic_model.md) | [notebooks/02_kinetic_model.ipynb](notebooks/02_kinetic_model.ipynb) |
+1. Run the code it gives you. If there is an error, paste the error back.
+2. Look at every plot before you continue. The assistant will ask you for decisions,
+   e.g. where the peak is. Those are yours to make.
+3. The task card lists checks. You are done when they pass and you can answer the questions
+   of the task.
 
 Stuck in task 1? Start task 2 from [checkpoints/neus_enzymeml.json](checkpoints/neus_enzymeml.json).
-
-## How to work with the assistant
-
-1. Paste the tool card, then the task card, then write: *Let's start with task 1.*
-2. Run the code it gives you. If there is an error, paste the error back.
-3. Look at every plot before you continue. The assistant will ask you for decisions,
-   e.g. where the peak is. Those are yours to make.
-4. The task card lists checks with expected values. You are done when all of them pass.
 
 ## What is in this repository
 
 ```
 README.md        you are here
-briefs/          tool cards and task cards to paste into the chat
+briefs/          tool cards and task cards to paste into the assistant
 data/            raw HPLC exports, initial concentrations, data description
-notebooks/       reference solutions for both tasks
+notebooks/       00_start_here (Colab starter) and the reference solutions of both tasks
 checkpoints/     result of task 1, to start task 2 directly
 slides/          workshop slides and figures
 ```
@@ -125,17 +91,28 @@ slides/          workshop slides and figures
 | --- | --- | --- |
 | chromhandler | 0.10.11 | read HPLC data, assign peaks, calibrate, export EnzymeML |
 | catalax | 0.5.5 | kinetic models, Bayesian parameter inference (HMC) |
-| Python | 3.12 (3.11–3.13 work) | |
+| Python | 3.11–3.13 | |
 
-Two things to know about Catalax 0.5.5, both handled in the tool card and the reference notebook:
-call `catalax.enable_x64()` before anything else, and leave every model state observable with
-NaN arrays for the unmeasured ones (`observable=False` silently breaks the sampler in this
-version: it compares every state with the data).
+The assistant installs them; the tool cards carry the commands (a fresh virtual environment,
+pinned versions). If you install by hand, do the same. Two things to know about Catalax 0.5.5,
+both handled in the tool card: call `catalax.enable_x64()` before anything else, and leave every
+model state observable with NaN arrays for the unmeasured ones (`observable=False` silently
+breaks the sampler in this version).
 
-## Reference results
+## Reference solutions
+
+At the end of the workshop, compare your result with one way of doing it: the notebooks
+[01_hplc_to_enzymeml.ipynb](notebooks/01_hplc_to_enzymeml.ipynb) and
+[02_kinetic_model.ipynb](notebooks/02_kinetic_model.ipynb). They run in Colab without any
+installation:
+
+| | |
+| --- | --- |
+| Task 1 · chromatograms → EnzymeML | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/01_hplc_to_enzymeml.ipynb) |
+| Task 2 · kinetic model by Bayesian inference | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/02_kinetic_model.ipynb) |
 
 Posterior mean ± sd (3–97 % interval); 2 chains × (500 warmup + 1000 samples), Gaussian
-likelihood, log-uniform priors.
+likelihood, log-uniform priors:
 
 | Result | Value |
 | --- | --- |
@@ -148,22 +125,3 @@ likelihood, log-uniform priors.
 One shared `kcat` over-predicts the ManNAc series and under-predicts the PEP series: the two
 series, measured on different days, differ in enzyme activity by roughly 25 %. A good question
 for the discussion.
-
-## Just look at the analysis, or rerun it in Colab
-
-The reference notebooks are open: run them, change a retention window, drop a series from the
-fit, change the model. Ask the assistant to explain any line. Breaking things here costs nothing.
-
-Nothing to install: Google Colab runs them in the browser (you need a Google account).
-
-1. Open a notebook with one of the buttons below.
-2. Click *Run anyway* on Colab's "not authored by Google" warning, then run the first cell.
-   It installs the tools and downloads this repository (about 30 s). *Runtime → Run all* runs
-   the whole analysis.
-3. For the tasks, open your AI assistant next to it: Gemini inside Colab (the ✨ icon), or
-   ChatGPT / Claude / any other chat in a second browser tab.
-
-| | |
-| --- | --- |
-| Task 1 · chromatograms → EnzymeML | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/01_hplc_to_enzymeml.ipynb) |
-| Task 2 · kinetic model by Bayesian inference | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/02_kinetic_model.ipynb) |

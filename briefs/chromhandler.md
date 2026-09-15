@@ -13,13 +13,16 @@ here; do not guess method names. If something is missing, say so and ask.
 
 ## Install
 
+Python 3.11–3.13, in a fresh virtual environment so the pinned version is the one that runs:
+
 ```
-pip install chromhandler==0.10.11
+uv venv && uv pip install chromhandler==0.10.11
 ```
 
-Python 3.11–3.13. `chromhandler` installs `pyenzyme`, `pandas`, `numpy`, `matplotlib`.
-In Google Colab, pip fails on a dependency's metadata; install with
-`pip install uv && python -m uv pip install --system chromhandler==0.10.11` instead.
+or, without uv: `python -m venv .venv`, activate it (`source .venv/bin/activate`; Windows:
+`.venv\Scripts\activate`), then `pip install chromhandler==0.10.11`.
+In Google Colab: `pip install uv && python -m uv pip install --system chromhandler==0.10.11`
+(Colab's own pip fails on a dependency's metadata).
 
 ## Read data
 
