@@ -162,9 +162,9 @@ def bracket(s, x1, x2, y, t):
 def workflow(s):
     bw, gap, y, h = 1.85, 0.57, 2.7, 1.25
     xs = [X + i * (bw + gap) for i in range(5)]
-    steps = [("Raw HPLC chromatograms", "24 reactions × 6 injections, 5 standards"),
+    steps = [("Raw HPLC chromatograms", "one peak table per injection"),
              ("Chromhandler", "peaks, calibration"),
-             ("EnzymeML document", "24 Neu5Ac time courses"),
+             ("EnzymeML document", "Neu5Ac time courses"),
              ("Catalax", "ODE model, Bayesian inference"),
              ("k_cat, Km_ManNAc, Km_PEP", "posterior distributions")]
     for x, (title, sub) in zip(xs, steps):
@@ -378,30 +378,15 @@ def main():
 
     s = slide("Figure", "The experiment", "ManNAc + PEP → Neu5Ac + Pi, followed by HPLC",
               notes="9:12 · 2 min. Neu5Ac synthase condenses ManNAc and PEP to Neu5Ac and phosphate (metal cofactor, "
-                    "water). HPLC-PDA at 215 nm. Two series: ManNAc varied at fixed PEP (13 reactions), PEP varied at "
-                    "fixed ManNAc (11 reactions); six injections each; five standards with 1–5 mM. Only the product is "
-                    "quantified; the substrates enter the model as their known initial values.")
+                    "water). HPLC-PDA at 215 nm; the instrument software exported one peak table per injection. Only the "
+                    "product is quantified; the substrates enter the model as their known initial values. Do not "
+                    "explain the design or the numbers: how many reactions there are, what was varied and what the "
+                    "data look like is what the participants find out with their assistant in task 1.")
     figure_slide(s, FIGS / "reaction_scheme.png",
-                 ["HPLC-PDA at 215 nm; only the product Neu5Ac is quantified",
-                  "ManNAc series: 13 reactions, ManNAc 0–100 mM at 20 mM PEP",
-                  "PEP series: 11 reactions, PEP 0–20 mM at 50 mM ManNAc",
-                  "Six injections per reaction; five calibration standards, 1–5 mM"])
-
-    s = slide("Content", "The dataset", "Two series, one substrate varied at a time",
-              notes="9:14 · 1 min. Two series: ManNAc varied at fixed PEP (13 reactions), PEP varied at fixed ManNAc "
-                    "(11 reactions); six injections each, 144 chromatograms; five standards with 1–5 mM Neu5Ac that also "
-                    "contain the substrates, no enzyme. Participants do not get the raw traces: the instrument software "
-                    "exported a peak table per injection, and that is the input of task 1. Initial concentrations are in "
-                    "conditions.csv. Where Neu5Ac elutes is in the task card and comes up in the demo.")
-    table(s, [["", "Samples", "What varies", "What is fixed"],
-              ["ManNAc series", "13 reactions", "ManNAc 0–100 mM", "PEP 20 mM"],
-              ["PEP series", "11 reactions", "PEP 0–20 mM", "ManNAc 50 mM"],
-              ["Calibration standards", "5 standards", "Neu5Ac 1–5 mM, with ManNAc and PEP", "no enzyme"]],
-          X, TOP, [2.7, 1.7, 3.9, CW - 8.3])
-    place(s.placeholders[1], X, 3.85, CW, BOTTOM - 3.85)
-    text(s.placeholders[1], ["24 reactions sampled six times: 144 chromatograms",
-                             "Per injection you get the instrument's peak table, not the raw trace",
-                             "Initial concentrations are in conditions.csv"])
+                 ["Reactions sampled over time and followed by HPLC-PDA at 215 nm",
+                  "What you get is the instrument's peak table per injection, not the raw trace",
+                  "Only the product Neu5Ac is quantified; calibration standards with known concentrations",
+                  "How many reactions, which conditions, how they were varied: that is in the data"])
 
     s = slide("Content", "Today", "What we do today",
               notes="9:15 · 1 min. Task 1 with Chromhandler, task 2 with Catalax. Live demo first, then you work in "
@@ -432,19 +417,20 @@ def main():
                              ("Run it cell by cell; ", "change a window, a prior, a series"),
                              ("Ask the model in Colab ", "to explain any cell")])
 
-    s = slide("Figure", "Task 1", "Task 1: from chromatograms to EnzymeML",
+    s = slide("Content", "Task 1", "Task 1: from chromatograms to EnzymeML",
               notes="9:15 · Live demo 15 min, then hands-on 9:30–10:15. Demo: paste chromhandler.md, then the task card, "
-                    "then 'Let's start with task 1'. Show the count (24 reactions, 5 standards) and the peak plot. "
-                    "Accept the calibration explicitly ('my decision, not the assistant's'). Deliberate mistake: when asked "
-                    "for the reaction window, say 'the same as the standards, 11.41 ± 0.05'; chromhandler warns 'No peaks "
-                    "found for Neu5Ac in 6 measurement(s)' per reaction, the document has 0 Neu5Ac values, the check "
-                    "'6 values per reaction' fails. Say why (the shift on the peak plot), correct to 10.05 ± 0.20, "
-                    "continue. Export, run the checks, show this plot.")
-    figure_slide(s, FIGS / "time_courses.png",
-                 [("Goal: ", "an EnzymeML document with 24 calibrated Neu5Ac time courses"),
-                  ("Your decision: ", "the Neu5Ac retention window, different in standards and reactions"),
-                  ("Checks: ", "slope ≈ 239 000 area per mM, R² ≥ 0.99; 24 measurements, six increasing time points each"),
-                  ("Live demo: ", "one deliberate mistake, the standards window used for the reactions")])
+                    "then 'Let's start with task 1'. Let the assistant read the data and answer the first question; show "
+                    "the peak plot. Accept the calibration explicitly ('my decision, not the assistant's'). Deliberate "
+                    "mistake: when asked for the reaction window, say 'the same as the standards'; chromhandler warns "
+                    "'No peaks found for Neu5Ac', the document has no Neu5Ac values. Say why (the shift on the peak plot), "
+                    "correct it, continue. The questions on the slide are what every pair answers; we compare at 11:25.")
+    text(s.placeholders[1], [("Goal: ", "an EnzymeML document with the calibrated Neu5Ac time course of every reaction"),
+                             ("Your decision: ", "the Neu5Ac retention window, different in standards and reactions"),
+                             ("Questions to answer", None),
+                             "How many reactions and standards are in the data, and what was varied?",
+                             "Where does Neu5Ac elute, in the standards and in the reactions?",
+                             "What is the calibration slope, and how well does the line fit?",
+                             "Does every reaction have all its time points, and which reactions form product?"])
 
     s = slide("Content", "Task 2", "Task 2: kinetic parameters by Bayesian inference",
               "v = k_cat · [NeuS] · [ManNAc] · [PEP] / ((Km_ManNAc + [ManNAc]) (Km_PEP + [PEP]))",
@@ -457,7 +443,11 @@ def main():
                              ("Model: ", "the enzyme is in the rate law, only Neu5Ac is measured, "
                                         "the metal cofactor is left out (a simplification)"),
                              ("Your decisions: ", "the priors, the assumed measurement noise, the sampler settings"),
-                             ("Checks: ", "r-hat near 1, no divergences, posterior clear of the prior bounds")])
+                             ("Questions to answer", None),
+                             "What are k_cat, Km_ManNAc and Km_PEP, and how uncertain is each?",
+                             "Do the two chains agree, and were there divergences?",
+                             "Is the posterior clear of the prior bounds, or does a bound decide the answer?",
+                             "Does one model describe both series?"])
 
     s = slide("Figure", "Reference result", "The reference fit, and an open question",
               notes="11:25 · 25 min. First collect everybody's kcat, Km_ManNAc, Km_PEP: how much do they differ and why "
