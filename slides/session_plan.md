@@ -13,7 +13,7 @@ Hands-on session 2, 7th EnzymeML Workshop. Deck: `slides/workshop.pptx`.
 
 | Time | Block | What happens |
 | --- | --- | --- |
-| 9:00 | Introduction (17 min) | Slides: last year the code was the hurdle; a year of language models; the assistant types, you decide; tools and skills; workflow; the two tools; the reaction; what we do today; the toolkit. The design and the data are not shown: the participants find them in task 1. |
+| 9:00 | Introduction (15 min) | Slides: last year the code was the hurdle; a year of language models; the assistant types, you decide; tools and skills; workflow; the two tools; the reaction; the hands-on slide (two tasks, how to get started; stays on the projector). The design and the data are not shown: the participants find them in task 1. |
 | 9:15 | Live demo task 1 (15 min) | See script below. Ends with `neus_enzymeml.json` and the time-course plot. |
 | 9:30 | Hands-on task 1 (45 min) | Participants work in pairs. Walk around; watch for the failure modes below. |
 | 10:15 | Break (15 min) | |

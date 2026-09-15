@@ -400,67 +400,24 @@ def main():
                   "Only the product Neu5Ac is quantified; calibration standards with known concentrations",
                   "How many reactions, which conditions, how they were varied: that is in the data"])
 
-    s = slide("Content", "Today", "What we do today",
-              notes="9:15 · 1 min. Task 1 with Chromhandler, task 2 with Catalax. Live demo first, then you work in "
-                    "pairs; the checks in the task card decide when you are done. Timing: demo 9:15, hands-on 9:30, "
-                    "break 10:15–10:30, demo 10:30, hands-on 10:40. At 11:25 we collect everybody's kcat and Km on one "
-                    "slide or the whiteboard, wrap-up 11:50.")
-    text(s.placeholders[1], [("Task 1: ", "from the peak tables to an EnzymeML document (Chromhandler)"),
-                             ("Task 2: ", "from the EnzymeML document to k_cat and Km by Bayesian inference (Catalax)"),
-                             "A live demo of each task first, then you work in pairs",
-                             "The checks in the task card say when you are done",
-                             "At the end we compare everybody's parameters and discuss"])
-
-    s = slide("Two columns", "Toolkit", "One repository, two ways to work",
-              "tinyurl.com/enzymeml2026 · start with the README",
-              notes="9:16 · 3 min. README first. Two ways. With a language model: any chat model, free or by "
-                    "subscription (ChatGPT, Claude, Gemini, …); paste the tool card, then the task card; run the code it "
-                    "writes; paste errors back; the checks decide. Without writing code: the Colab link opens a prepared "
-                    "notebook with the tools installed and the data loaded; run it cell by cell, change a window, a "
-                    "prior, a series; ask the model inside Colab to explain any cell. notebooks/ are the reference "
-                    "solutions, open to everyone; checkpoints/ holds the result of task 1. Locally: uv sync.")
-    text(s.placeholders[1], [("With a language model", None),
-                             ("Any chat model, ", "free or by subscription: ChatGPT, Claude, Gemini, …"),
-                             ("Paste ", "the tool card and the task card; run the code, paste errors back"),
-                             ("The checks ", "decide when you are done"),
-                             ("notebooks/ ", "are the reference solutions, checkpoints/ the result of task 1")])
-    text(s.placeholders[2], [("Without writing code", None),
-                             ("Open the Colab link: ", "a prepared notebook, tools installed, data loaded"),
-                             ("Run it cell by cell; ", "change a window, a prior, a series"),
-                             ("Ask the model in Colab ", "to explain any cell")])
-
-    s = slide("Two columns", "Task 1", "Task 1: from chromatograms to EnzymeML",
-              "Result: an EnzymeML document with the Neu5Ac time course of every reaction",
-              notes="9:15 · Live demo 15 min, then hands-on 9:30–10:15. Demo: paste chromhandler.md, then the task card, "
-                    "then 'Let's start with task 1'. Let the assistant read the data and answer the first question; show "
-                    "the peak plot. Accept the calibration explicitly ('my decision, not the assistant's'). Deliberate "
-                    "mistake: when asked for the reaction window, say 'the same as the standards'; chromhandler warns "
-                    "'No peaks found for Neu5Ac', the document has no Neu5Ac values. Say why (the shift on the peak plot), "
-                    "correct it, continue. The questions on the slide are what every pair answers; we compare at 11:25.")
+    s = slide("Two columns", "Hands-on", "Two tasks, one repository",
+              "Everything is in the README: tinyurl.com/enzymeml2026",
+              notes="9:15 · 2 min, then this slide stays on the projector. Task 1 with Chromhandler, task 2 with "
+                    "Catalax; the README has the detailed tasks (what to look for in the data) and the three ways to "
+                    "work. Live demo of task 1 first (9:15), hands-on from 9:30, break 10:15, demo of task 2 10:30, "
+                    "hands-on 10:40, comparison of everybody's parameters at 11:25. Those without an assistant that "
+                    "runs code team up; those stuck in task 1 start task 2 from the checkpoint.")
     text(s.placeholders[1], [("Tasks", None),
-                             "Plot the data",
-                             "Check how the kinetic assay was designed",
-                             "Calibrate: the calibration parameters",
-                             "Assign the product peak in the reactions",
-                             "Export the EnzymeML document",
-                             ("Details: ", "README, section Task 1")])
-    how_to(s)
-
-    s = slide("Two columns", "Task 2", "Task 2: kinetic parameters by Bayesian inference",
-              "v = k_cat · [NeuS] · [ManNAc] · [PEP] / ((Km_ManNAc + [ManNAc]) (Km_PEP + [PEP]))",
-              notes="10:30 · Live demo 10 min, then hands-on 10:40–11:25. Paste catalax.md, then the task card. "
-                    "enable_x64 first. Only Neu5Ac has data; in Catalax 0.5.5 every state stays observable and the "
-                    "unmeasured ones get NaN arrays (observable=False breaks the sampler in this version). The priors and the "
-                    "sampler settings are in the card; they are decisions, say so. Show the posterior table, the trace "
-                    "and the fit plot. Those who did not finish task 1 start from checkpoints/neus_enzymeml.json.")
-    text(s.placeholders[1], [("Tasks", None),
-                             "Plot the time courses",
-                             "Define the model and the priors",
-                             "Infer the kinetic parameters and their uncertainty",
-                             "The correlation between the kinetic parameters",
-                             "Does one model describe both series?",
-                             ("Details: ", "README, section Task 2")])
-    how_to(s)
+                             ("Task 1 · chromatograms to EnzymeML: ", "plot the data, check the assay design, calibrate, "
+                                                                     "export the document"),
+                             ("Task 2 · kinetic parameters: ", "infer k_cat and Km with their uncertainty and "
+                                                              "correlation; does the model describe the data?"),
+                             ("At the end ", "we compare everybody's parameters")])
+    text(s.placeholders[2], [("How to get started", None),
+                             ("Coding assistant on your computer: ", "give it the cards in briefs/"),
+                             ("Chat assistant only: ", "the Colab starter notebook"),
+                             ("No assistant that runs code? ", "team up"),
+                             ("Details: ", "README, sections How to do it, Task 1, Task 2")])
 
     s = slide("Figure", "Reference result", "The reference fit, and an open question",
               notes="11:25 · 25 min. First collect everybody's kcat, Km_ManNAc, Km_PEP: how much do they differ and why "
