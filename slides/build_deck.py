@@ -263,19 +263,14 @@ def pillars(s, items):
         label(s, x, 3.95, w, 0.45, head, size=16, color=INK, bold=True)
         label(s, x, 4.55, w, 1.4, sub, size=13)
 
-def how_to(s, tool_card, task_card, task, extra=None):
-    """Right column of a task slide: the three ways to work, and where the material is."""
-    items = [("How to do it", None),
-             ("Coding assistant on your machine ", f"(Claude Code, Codex, Cursor, …): open the repository, give it "
-                                                    f"{tool_card} and {task_card}, then say: let's start with {task}"),
-             ("Chat assistant only ", "(ChatGPT, Claude, Gemini, …): open the Colab starter notebook from the README, "
-                                     "paste the two cards into the chat, run its code in the notebook"),
-             ("No assistant that runs code? ", "team up with someone who has one")]
-    if extra:
-        items.append(extra)
-    items.append(("Repository, data and cards: ", "tinyurl.com/enzymeml2026"))
-    text(s.placeholders[2], items, size=15)
-
+def how_to(s):
+    """Right column of a task slide: the three ways to work, where the details are, the link."""
+    text(s.placeholders[2], [("How to do it", None),
+                             ("Coding assistant on your computer: ", "the cards in briefs/"),
+                             ("Chat assistant only: ", "the Colab starter notebook"),
+                             ("No assistant that runs code? ", "team up"),
+                             ("Details: ", "README, section How to do it"),
+                             ("Repository: ", "tinyurl.com/enzymeml2026")])
 
 # ---- the deck -------------------------------------------------------------------------------
 def main():
@@ -442,13 +437,14 @@ def main():
                     "mistake: when asked for the reaction window, say 'the same as the standards'; chromhandler warns "
                     "'No peaks found for Neu5Ac', the document has no Neu5Ac values. Say why (the shift on the peak plot), "
                     "correct it, continue. The questions on the slide are what every pair answers; we compare at 11:25.")
-    text(s.placeholders[1], [("Plot the data: ", "all peaks of all injections; where does Neu5Ac elute?"),
-                             ("Check how the kinetic assay was designed: ", "how many reactions, what was varied, what was fixed?"),
-                             ("Calibrate: ", "what are the calibration parameters, and how well does the line fit?"),
-                             ("Set the retention window ", "for the reactions (it differs from the standards) and assign the peak"),
-                             ("Export the EnzymeML document: ", "every reaction with all its time points; which reactions form product?")],
-         size=15)
-    how_to(s, "briefs/chromhandler.md", "briefs/task_1_chromatograms_to_enzymeml.md", "task 1")
+    text(s.placeholders[1], [("Tasks", None),
+                             "Plot the data",
+                             "Check how the kinetic assay was designed",
+                             "Calibrate: the calibration parameters",
+                             "Assign the product peak in the reactions",
+                             "Export the EnzymeML document",
+                             ("Details: ", "README, section Task 1")])
+    how_to(s)
 
     s = slide("Two columns", "Task 2", "Task 2: kinetic parameters by Bayesian inference",
               "v = k_cat · [NeuS] · [ManNAc] · [PEP] / ((Km_ManNAc + [ManNAc]) (Km_PEP + [PEP]))",
@@ -457,15 +453,14 @@ def main():
                     "unmeasured ones get NaN arrays (observable=False breaks the sampler in this version). The priors and the "
                     "sampler settings are in the card; they are decisions, say so. Show the posterior table, the trace "
                     "and the fit plot. Those who did not finish task 1 start from checkpoints/neus_enzymeml.json.")
-    text(s.placeholders[1], [("Plot the time courses ", "from the EnzymeML document"),
-                             ("Define the model and the priors: ", "the enzyme is in the rate law, only Neu5Ac is measured"),
-                             ("Infer the kinetic parameters: ", "k_cat, Km_ManNAc and Km_PEP, each with its uncertainty"),
-                             ("Check the sampler: ", "do the chains agree, divergences, posterior clear of the prior bounds?"),
-                             ("What is the correlation between the kinetic parameters?", ""),
-                             ("Does one model describe both series? ", "plot data and model together")],
-         size=15)
-    how_to(s, "briefs/catalax.md", "briefs/task_2_kinetic_model.md", "task 2",
-           extra=("No result from task 1? ", "start from checkpoints/neus_enzymeml.json"))
+    text(s.placeholders[1], [("Tasks", None),
+                             "Plot the time courses",
+                             "Define the model and the priors",
+                             "Infer the kinetic parameters and their uncertainty",
+                             "The correlation between the kinetic parameters",
+                             "Does one model describe both series?",
+                             ("Details: ", "README, section Task 2")])
+    how_to(s)
 
     s = slide("Figure", "Reference result", "The reference fit, and an open question",
               notes="11:25 · 25 min. First collect everybody's kcat, Km_ManNAc, Km_PEP: how much do they differ and why "

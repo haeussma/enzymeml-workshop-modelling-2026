@@ -41,47 +41,72 @@ Product formation was followed by HPLC; the instrument software exported one pea
 injection, and those exports plus the initial concentrations are the data. Details, including
 where Neu5Ac elutes: [data/README.md](data/README.md).
 
-## How the workshop works
+## How to do it
 
-Everything the assistant needs is in `briefs/`, as one-page cards: a **tool card** tells it how to
-use Chromhandler or Catalax, a **task card** tells it what you want from this dataset. You paste
-both into the assistant, run the code it writes, and answer the questions of the task.
+You need an AI assistant and a place where its code runs. Three ways:
 
-### 1. Choose where the code runs
+1. **A coding assistant on your computer** (Claude Code, Codex, Cursor, …): clone the repository
+   and give the assistant the two cards of the task (below). It installs the tools itself; the
+   tool cards say how.
 
-- **In the browser, with a chat assistant** (ChatGPT, Claude, Gemini, …): open the starter
-  notebook in Google Colab
-  [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/00_start_here.ipynb)
-  (Google account needed; click *Run anyway* on Colab's warning). Its first cell installs the
-  tools and downloads the data, about 30 s. Paste the code the assistant writes into new cells
-  and run them; paste errors and outputs back into the chat. Colab's own Gemini panel (the ✨
-  icon) can be the assistant.
-- **On your computer, with a coding agent** (Claude Code, Codex, Cursor, …): clone the
-  repository and point the agent at the cards. It installs the tools itself; the tool cards say
-  how, in a fresh virtual environment with the pinned versions.
+   ```bash
+   git clone https://github.com/haeussma/enzymeml-workshop-modelling-2026
+   ```
 
-  ```bash
-  git clone https://github.com/haeussma/enzymeml-workshop-modelling-2026
-  ```
+2. **A chat assistant only** (ChatGPT, Claude, Gemini, …): open the starter notebook in Google
+   Colab
+   [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/00_start_here.ipynb)
+   (Google account needed; click *Run anyway* on Colab's warning). Its first cell installs the
+   tools and downloads the data, about 30 s. Paste the two cards into the chat, paste the code the
+   assistant writes into new cells, run them, and paste errors and outputs back into the chat.
+   Colab's own Gemini panel (the ✨ icon) can be the assistant.
+3. **No assistant that runs code?** Team up with someone who has one.
 
-### 2. Give the assistant the cards
+The cards are in `briefs/`: a **tool card** tells the assistant how to use Chromhandler or
+Catalax, a **task card** tells it what you want from this dataset. Paste the tool card, then the
+task card, then write: *Let's start with task 1.* Then:
 
-| Task | Tool card | Task card | You get |
-| --- | --- | --- | --- |
-| 1. Chromatograms → EnzymeML | [briefs/chromhandler.md](briefs/chromhandler.md) | [briefs/task_1_chromatograms_to_enzymeml.md](briefs/task_1_chromatograms_to_enzymeml.md) | calibrated Neu5Ac time courses of every reaction, as an EnzymeML document |
-| 2. Kinetic model | [briefs/catalax.md](briefs/catalax.md) | [briefs/task_2_kinetic_model.md](briefs/task_2_kinetic_model.md) | posterior distributions of `kcat`, `Km_ManNAc`, `Km_PEP`, with corner and fit plots |
+- Run the code it gives you. If there is an error, paste the error back.
+- Look at every plot before you continue. The assistant will ask you for decisions, e.g. where
+  the peak is. Those are yours to make.
+- The task card lists checks. You are done when they pass and you can answer the questions below.
 
-Paste the tool card, then the task card, then write: *Let's start with task 1.*
+## Task 1: from chromatograms to EnzymeML
 
-### 3. Run, look, decide
+Cards: [briefs/chromhandler.md](briefs/chromhandler.md) and
+[briefs/task_1_chromatograms_to_enzymeml.md](briefs/task_1_chromatograms_to_enzymeml.md).
+Result: an EnzymeML document with the calibrated Neu5Ac time course of every reaction.
 
-1. Run the code it gives you. If there is an error, paste the error back.
-2. Look at every plot before you continue. The assistant will ask you for decisions,
-   e.g. where the peak is. Those are yours to make.
-3. The task card lists checks. You are done when they pass and you can answer the questions
-   of the task.
+What to look for in this dataset:
 
-Stuck in task 1? Start task 2 from [checkpoints/neus_enzymeml.json](checkpoints/neus_enzymeml.json).
+1. **Plot the data.** All peaks of all injections against their retention time. Where does Neu5Ac
+   elute, in the standards and in the reactions?
+2. **Check how the kinetic assay was designed.** How many reactions and standards are there, what
+   was varied between the reactions, what was kept fixed?
+3. **Calibrate.** What are the calibration parameters, and how well does the line fit the
+   standards?
+4. **Set the retention window for the reactions** (it differs from the standards) and assign the
+   product peak in every chromatogram.
+5. **Export the EnzymeML document** and check it: does every reaction have all its time points,
+   and which reactions form product?
+
+## Task 2: kinetic parameters by Bayesian inference
+
+Cards: [briefs/catalax.md](briefs/catalax.md) and
+[briefs/task_2_kinetic_model.md](briefs/task_2_kinetic_model.md). Start from your task 1
+document, or from [checkpoints/neus_enzymeml.json](checkpoints/neus_enzymeml.json).
+Result: posterior distributions of `kcat`, `Km_ManNAc` and `Km_PEP`, with corner and fit plots.
+
+What to look for:
+
+1. **Plot the time courses** from the EnzymeML document.
+2. **Define the model and the priors.** The enzyme is in the rate law; only Neu5Ac is measured.
+3. **Infer the kinetic parameters.** `kcat`, `Km_ManNAc` and `Km_PEP`, each with its uncertainty.
+4. **Check the sampler.** Do the chains agree? Divergences? Is the posterior clear of the prior
+   bounds, or does a bound decide the answer?
+5. **What is the correlation between the kinetic parameters?** Which pairs trade off against
+   each other, and why?
+6. **Does one model describe both series?** Plot data and model together.
 
 ## What is in this repository
 
