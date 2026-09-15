@@ -172,7 +172,7 @@ def workflow(s):
     for x in xs[:-1]:
         line(s, x + bw + 0.06, y + h / 2, x + bw + gap - 0.06, y + h / 2, head=True)
     bracket(s, xs[0], xs[2] + bw, y + h + 0.45, "Task 1 · chromatograms to EnzymeML")
-    bracket(s, xs[2], xs[4] + bw, y + h + 1.2, "Task 2 · EnzymeML to k_cat and Km")
+    bracket(s, xs[2], xs[4] + bw, y + h + 1.2, "Task 2 · infer the kinetic parameters")
 
 
 def concept(s):
@@ -374,16 +374,10 @@ def main():
                     "and plot. The model, the priors and the noise are the scientist's decisions; the checks say whether "
                     "the posterior can be trusted. Right: posterior distributions, not point estimates, and the plots.")
     tool_slide(s,
-               inputs=[("EnzymeML document", "time courses and initial conditions"),
-                       ("Rate law", "one equation; states and ODEs follow from it"),
-                       ("Priors and noise", "what you assume before seeing the data")],
-               steps=[("Load the dataset", "Dataset.from_enzymeml"),
-                      ("Define the model", "add_state, add_ode; your decision"),
-                      ("Set the priors", "LogUniform per parameter, yerrs; your decision"),
-                      ("Sample", "run_mcmc: chains, warmup, samples"),
-                      ("Check and plot", "r-hat, divergences, bounds, correlations")],
-               outputs=[("Posterior", "k_cat, Km_ManNAc, Km_PEP: mean ± sd, intervals"),
-                        ("Plots", "corner plot; data with the model on top")])
+               inputs=[("EnzymeML document", None), ("Rate law", None), ("Priors and noise", None)],
+               steps=[("Load the dataset", None), ("Define the model", None), ("Set the priors", None),
+                      ("Sample", None), ("Check and plot", None)],
+               outputs=[("Posterior", None), ("Plots", None)])
 
     s = slide("Figure", "The experiment", "ManNAc + PEP → Neu5Ac + Pi, followed by HPLC",
               cite="Data: Çakar et al. (2024) Kinetic characterization of two neuraminic acid synthases and evaluation of their application potential. Appl. Microbiol. Biotechnol. 108, 446 · doi:10.1007/s00253-024-13277-1",
