@@ -486,8 +486,7 @@ def main():
 
     s = slide("End", None, "Thank you", notes="11:58 · Close. The repository stays up: tinyurl.com/enzymeml2026, or the "
                                                  "QR code. Questions in the break or by mail.")
-    two_lines(s, "tinyurl.com/enzymeml2026",
-              "github.com/haeussma/enzymeml-workshop-modelling-2026  ·  Max Häußler · University of Freiburg")
+    two_lines(s, "tinyurl.com/enzymeml2026", "Max Häußler · University of Freiburg")
     picture(s, FIGS / "qr_repository.png", 11.0, 2.35, 1.5, 1.5)
 
     for s in prs.slides:                                 # unused kicker/subtitle/citation prompts
