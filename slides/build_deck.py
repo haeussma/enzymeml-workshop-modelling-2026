@@ -203,6 +203,43 @@ def concept(s):
     line(s, 9.14, 4.1, xm + wm + 0.06, 4.1, head=True); label(s, xm + wm + 0.05, 3.8, 1.1, 0.25, "instructions")
 
 
+def tool_slide(s, inputs, steps, outputs):
+    """One tool: inputs on the left, the steps in order in the middle (decisions marked in the sub line),
+    outputs on the right; spines with arrows connect the columns. Under a title with subtitle."""
+    cols = {"Input": (X, 3.0), "Steps": (X + 3.57, 4.4), "Output": (X + 8.53, 3.0)}
+    for name, (x, w) in cols.items():
+        label(s, x, 2.25, w, 0.3, name)
+    top = 2.6
+    # inputs, joined by a spine that feeds the first step
+    x, w = cols["Input"]
+    h, gap = 0.75, 0.25
+    spine = x + w + 0.25
+    for i, (t, sub) in enumerate(inputs):
+        y = top + i * (h + gap)
+        box(s, x, y, w, h, t, sub)
+        line(s, x + w, y + h / 2, spine, y + h / 2)
+    xs, ws = cols["Steps"]
+    hs, gs = 0.58, 0.16
+    ys = [top + i * (hs + gs) for i in range(len(steps))]
+    line(s, spine, ys[0] + hs / 2, spine, top + (len(inputs) - 1) * (h + gap) + h / 2)
+    line(s, spine, ys[0] + hs / 2, xs - 0.06, ys[0] + hs / 2, head=True)
+    # steps, one arrow to the next
+    for y, (t, sub) in zip(ys, steps):
+        box(s, xs, y, ws, hs, t, sub)
+    for y in ys[:-1]:
+        line(s, xs + ws / 2, y + hs + 0.02, xs + ws / 2, y + gs + hs - 0.02, head=True)
+    # outputs, fed by the last step through a spine
+    xo, wo = cols["Output"]
+    spine = xo - 0.25
+    y_last = ys[-1] + hs / 2
+    line(s, xs + ws, y_last, spine, y_last)
+    line(s, spine, top + h / 2, spine, y_last)
+    for i, (t, sub) in enumerate(outputs):
+        y = top + i * (h + gap)
+        box(s, xo, y, wo, h, t, sub)
+        line(s, spine, y + h / 2, xo - 0.06, y + h / 2, head=True)
+
+
 # ---- the deck -------------------------------------------------------------------------------
 def main():
     prs = Presentation(HERE / "template.pptx")
@@ -272,8 +309,45 @@ def main():
                     "task 2 from the checkpoint. Timing: task 1 9:15–10:15, task 2 10:30–11:25.")
     workflow(s)
 
+    s = slide("Title only", "Tool 1 · Chromhandler", "Chromhandler: from peak tables to concentrations",
+              "Reads the instrument's exports, assigns and calibrates one peak per compound, writes EnzymeML",
+              notes="9:08 · 1 min. Left: what goes in, the peak tables the instrument software exported (one per "
+                    "injection, the reaction time in the file name), the standards with known concentrations, and the "
+                    "initial concentrations. Middle: the steps in order; two of them are the scientist's decisions, the "
+                    "retention window per session and accepting the calibration. Right: the EnzymeML document and the "
+                    "checks the task card asks for.")
+    tool_slide(s,
+               inputs=[("Peak tables", "one export per injection, the time in the file name"),
+                       ("Calibration standards", "exports with known concentrations"),
+                       ("Initial concentrations", "what was in each reaction at t = 0")],
+               steps=[("Read the exports", "read_shimadzu, reaction or calibration mode"),
+                      ("Set the retention window", "your decision, per measurement session"),
+                      ("Assign the peak", "auto_assign: the peak inside the window"),
+                      ("Calibrate", "add_standard, area against concentration; you accept R²"),
+                      ("Export", "to_enzymeml: areas become concentrations")],
+               outputs=[("EnzymeML document", "time courses with their initial conditions"),
+                        ("Checks", "one peak per chromatogram, R², values per reaction")])
+
+    s = slide("Title only", "Tool 2 · Catalax", "Catalax: from time courses to kinetic parameters",
+              "Builds the ODE model from a rate law and samples the posterior of its parameters",
+              notes="9:09 · 1 min. Left: the EnzymeML document, the rate law, and the assumptions, priors and noise. "
+                    "Middle: load, define the model, set the priors, sample with Hamiltonian Monte Carlo, then check "
+                    "and plot. The model, the priors and the noise are the scientist's decisions; the checks say whether "
+                    "the posterior can be trusted. Right: posterior distributions, not point estimates, and the plots.")
+    tool_slide(s,
+               inputs=[("EnzymeML document", "time courses and initial conditions"),
+                       ("Rate law", "one equation; states and ODEs follow from it"),
+                       ("Priors and noise", "what you assume before seeing the data")],
+               steps=[("Load the dataset", "Dataset.from_enzymeml"),
+                      ("Define the model", "add_state, add_ode; your decision"),
+                      ("Set the priors", "LogUniform per parameter, yerrs; your decision"),
+                      ("Sample", "run_mcmc: chains, warmup, samples"),
+                      ("Check and plot", "r-hat, divergences, bounds, correlations")],
+               outputs=[("Posterior", "k_cat, Km_ManNAc, Km_PEP: mean ± sd, intervals"),
+                        ("Plots", "corner plot; data with the model on top")])
+
     s = slide("Figure", "The experiment", "ManNAc + PEP → Neu5Ac + Pi, followed by HPLC",
-              notes="9:08 · 2 min. Neu5Ac synthase condenses ManNAc and PEP to Neu5Ac and phosphate (metal cofactor, "
+              notes="9:10 · 2 min. Neu5Ac synthase condenses ManNAc and PEP to Neu5Ac and phosphate (metal cofactor, "
                     "water). HPLC-PDA at 215 nm. Two series: ManNAc varied at fixed PEP (13 reactions), PEP varied at "
                     "fixed ManNAc (11 reactions); six injections each; five standards with 1–5 mM. Only the product is "
                     "quantified; the substrates enter the model as their known initial values.")
@@ -284,7 +358,7 @@ def main():
                   "Six injections per reaction; five calibration standards, 1–5 mM"])
 
     s = slide("Content", "The dataset", "Two series, one substrate varied at a time",
-              notes="9:10 · 1 min. Two series: ManNAc varied at fixed PEP (13 reactions), PEP varied at fixed ManNAc "
+              notes="9:12 · 1 min. Two series: ManNAc varied at fixed PEP (13 reactions), PEP varied at fixed ManNAc "
                     "(11 reactions); six injections each, 144 chromatograms; five standards with 1–5 mM Neu5Ac that also "
                     "contain the substrates, no enzyme. Participants do not get the raw traces: the instrument software "
                     "exported a peak table per injection, and that is the input of task 1. Initial concentrations are in "
@@ -300,7 +374,7 @@ def main():
                              "Initial concentrations are in conditions.csv"])
 
     s = slide("Content", "Today", "What we do today",
-              notes="9:11 · 1 min. Task 1 with Chromhandler, task 2 with Catalax. Live demo first, then you work in "
+              notes="9:13 · 1 min. Task 1 with Chromhandler, task 2 with Catalax. Live demo first, then you work in "
                     "pairs; the checks in the task card decide when you are done. Timing: demo 9:15, hands-on 9:30, "
                     "break 10:15–10:30, demo 10:30, hands-on 10:40. At 11:25 we collect everybody's kcat and Km on one "
                     "slide or the whiteboard, wrap-up 11:50.")
