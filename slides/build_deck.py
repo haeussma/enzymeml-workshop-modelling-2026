@@ -415,7 +415,7 @@ def main():
                              "At the end we compare everybody's parameters and discuss"])
 
     s = slide("Two columns", "Toolkit", "One repository, two ways to work",
-              "tinyurl.com/enzymeml2026 · github.com/haeussma/enzymeml-workshop-modelling-2026 · start with the README",
+              "tinyurl.com/enzymeml2026 · start with the README",
               notes="9:16 · 3 min. README first. Two ways. With a language model: any chat model, free or by "
                     "subscription (ChatGPT, Claude, Gemini, …); paste the tool card, then the task card; run the code it "
                     "writes; paste errors back; the checks decide. Without writing code: the Colab link opens a prepared "
