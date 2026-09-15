@@ -1,0 +1,16 @@
+company,model,release_date,value,aa_label,value_source_url,release_source_url
+Anthropic,Claude Opus 4.1,2025-08-05,22.8,Claude 4.1 Opus (Reasoning),https://artificialanalysis.ai/models/claude-4-1-opus-thinking,https://www.anthropic.com/news/claude-opus-4-1
+OpenAI,GPT-5,2025-08-07,23.0,GPT-5 (high),https://artificialanalysis.ai/models/gpt-5,https://openai.com/index/introducing-gpt-5/
+OpenAI,GPT-5.1,2025-11-12,24.7,GPT-5.1 (high),https://artificialanalysis.ai/models/gpt-5-1,https://openai.com/index/gpt-5-1-for-developers/
+Anthropic,Claude Opus 4.5,2025-11-24,29.1,Claude Opus 4.5 (Reasoning),https://artificialanalysis.ai/models/claude-opus-4-5-thinking,https://www.anthropic.com/news/claude-opus-4-5
+OpenAI,GPT-5.2,2025-12-11,30.4,GPT-5.2 (xhigh),https://artificialanalysis.ai/models/gpt-5-2,https://openai.com/index/introducing-gpt-5-2/
+Anthropic,Claude Opus 4.6,2026-02-05,31.9,"Claude Opus 4.6 (Adaptive Reasoning, Max Effort)",https://artificialanalysis.ai/models/claude-opus-4-6-adaptive,https://www.anthropic.com/news/claude-opus-4-6
+OpenAI,GPT-5.4,2026-03-05,39.0,GPT-5.4 (xhigh),https://artificialanalysis.ai/models/gpt-5-4,https://openai.com/index/introducing-gpt-5-4/
+Anthropic,Claude Opus 4.7,2026-04-16,40.7,"Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",https://artificialanalysis.ai/models/claude-opus-4-7,https://www.anthropic.com/news/claude-opus-4-7
+OpenAI,GPT-5.5,2026-04-23,38.6,GPT-5.5 (xhigh),https://artificialanalysis.ai/models/gpt-5-5,https://openai.com/index/introducing-gpt-5-5/
+Anthropic,Claude Opus 4.8,2026-05-28,42.0,"Claude Opus 4.8 (Adaptive Reasoning, Max Effort)",https://artificialanalysis.ai/models/claude-opus-4-8,https://www.anthropic.com/news/claude-opus-4-8
+Anthropic,Claude Fable 5,2026-06-09,49.7,"Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",https://artificialanalysis.ai/models/claude-fable-5,https://www.anthropic.com/news/claude-fable-5-mythos-5
+OpenAI,GPT-5.6 Sol,2026-07-09,47.1,GPT-5.6 Sol (max),https://artificialanalysis.ai/models/gpt-5-6-sol,https://openai.com/index/gpt-5-6/
+Anthropic,Claude Opus 5,2026-07-24,50.7,Claude Opus 5 (max),https://artificialanalysis.ai/models/claude-opus-5,https://www.anthropic.com/news/claude-opus-5
+Anthropic,Claude Fable 5.1,2026-09-01,53.4,Claude Fable 5.1 (max with fallback),https://artificialanalysis.ai/models/claude-fable-5-1,https://www.anthropic.com/claude-fable-and-mythos-5-1
+OpenAI,GPT-6 Astra,2026-09-04,52.8,GPT-6 Astra (max),https://artificialanalysis.ai/models/gpt-6-astra,https://openai.com/index/gpt-6-astra/

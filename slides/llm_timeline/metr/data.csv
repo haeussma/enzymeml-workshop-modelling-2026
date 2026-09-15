@@ -1,0 +1,8 @@
+company,model,release_date,p50_h,ci_low_h,ci_high_h,reliable,value_source_url,release_source_url,notes
+Anthropic,Claude Opus 4.1,2025-08-05,1.67,0.99,2.66,yes,https://metr.org/assets/benchmark_results_1_1.yaml,https://www.anthropic.com/news/claude-opus-4-1,METR TH1.1 key claude_4_1_opus_inspect; state at last workshop
+OpenAI,GPT-5,2025-08-07,3.38,1.88,6.76,yes,https://metr.org/assets/benchmark_results_1_1.yaml,https://openai.com/index/introducing-gpt-5/,METR TH1.1 key gpt_5_2025_08_07_inspect; state at last workshop
+Anthropic,Claude Opus 4.5,2025-11-24,4.88,2.70,10.40,yes,https://metr.org/assets/benchmark_results_1_1.yaml,https://www.anthropic.com/news/claude-opus-4-5,METR TH1.1 key claude_opus_4_5_inspect
+OpenAI,GPT-5.2,2025-12-11,5.87,3.30,13.59,yes,https://metr.org/assets/benchmark_results_1_1.yaml,https://openai.com/index/introducing-gpt-5-2/,METR TH1.1 key gpt_5_2
+Anthropic,Claude Opus 4.6,2026-02-05,11.98,5.28,60.56,yes,https://metr.org/assets/benchmark_results_1_1.yaml,https://www.anthropic.com/news/claude-opus-4-6,METR TH1.1 key claude_opus_4_6_inspect; 2.0x previous best; first posted as 14.5 h before METR's 2026-03-03 correction
+OpenAI,GPT-5.4,2026-03-05,5.70,3.11,12.81,yes,https://metr.org/assets/benchmark_results_1_1.yaml,https://openai.com/index/introducing-gpt-5-4/,METR TH1.1 key gpt_5_4
+OpenAI,GPT-5.6 Sol,2026-07-09,11.3,5,40,no,https://metr.org/blog/2026-06-26-gpt-5-6-sol/,https://openai.com/index/gpt-5-6/,METR predeployment report; cheating scored as failure; METR: not a robust measurement
