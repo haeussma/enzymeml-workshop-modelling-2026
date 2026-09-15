@@ -239,6 +239,21 @@ def tool_slide(s, inputs, steps, outputs):
         box(s, xo, y, wo, h, t, sub)
         line(s, spine, y + h / 2, xo - 0.06, y + h / 2, head=True)
 
+def hurdles(s):
+    """Last year's path to an analysis: four hurdles in a row before the analysis itself."""
+    bw, gap, y, h = 1.85, 0.57, 2.6, 1.15
+    xs = [X + i * (bw + gap) for i in range(5)]
+    steps = [("Install", "Python, packages, a working environment"),
+             ("Read the docs", "how the tools are used"),
+             ("Write the code", "Python, by hand, for your data"),
+             ("Debug, repeat", "errors, versions, time"),
+             ("Your analysis", "structured data, a kinetic model")]
+    for x, (title, sub) in zip(xs, steps):
+        box(s, x, y, bw, h, title, sub)
+    for x in xs[:-1]:
+        line(s, x + bw + 0.06, y + h / 2, x + bw + gap - 0.06, y + h / 2, head=True)
+    bracket(s, xs[0], xs[3] + bw, y + h + 0.45, "the hurdles")
+
 
 # ---- the deck -------------------------------------------------------------------------------
 def main():
@@ -268,10 +283,26 @@ def main():
                     "break in between, comparison of results at 11:25, wrap-up at 11:50.")
     two_lines(s, "Max Häußler", "University of Freiburg")
 
+    s = slide("Figure", "Looking back", "Last year the code was the hurdle",
+              "Previous hands-on sessions: we installed, read the docs and wrote the analysis code ourselves",
+              notes="9:01 · 2 min. Recap of the earlier sessions: we, as humans, wrote the code. Before the first "
+                    "plot everyone had to set up a computing environment, read the documentation of the tools for "
+                    "extracting and modelling data, and write Python. Installations failed, the code was unfamiliar, "
+                    "and for people who do not work with code every day this was a burden. That kept many from "
+                    "structuring their data at all, and so from using contemporary data-science methods on it. "
+                    "Bridge: since then a lot has happened with language models and AI agents; the models got better, "
+                    "and the harnesses that let a model execute tools got much better. Next slide shows the models.")
+    drop(s.placeholders[1])
+    hurdles(s)
+    place(s.placeholders[2], X, 4.55, CW, 1.6)
+    text(s.placeholders[2], ["Failing installs and unfamiliar code: a hurdle for everyone who does not code daily",
+                             "So the data stayed unstructured, and the contemporary methods out of reach",
+                             ("Since then: ", "the models got better, and so did the harnesses that let them run tools")])
+
     s = slide("Figure", "Language models since the last workshop", "From 23 to 53 in one year",
               "The two labs traded the lead several times; the biggest single step was Fable 5 in June 2026",
               cite="Artificial Analysis Intelligence Index v4.3, artificialanalysis.ai; release dates from the vendors",
-              notes="9:01 · 2 min. Dashed line: the 6th workshop, 29 Sep – 2 Oct 2025. Since then the flagship models went "
+              notes="9:03 · 2 min. Dashed line: the 6th workshop, 29 Sep – 2 Oct 2025. Since then the flagship models went "
                     "from about 23 to 53 on the index. The index is an independent benchmark, every model tested the same way. "
                     "The point is that the tool changed a lot in one year, not which lab leads. Keep it short.")
     figure_slide(s, LLM, ["The Intelligence Index is an independent score from 0 to 100 that combines many tests of "
@@ -280,7 +311,7 @@ def main():
                           "public setting."], top=2.2)
 
     s = slide("Content", "Motivation", "The assistant types, you decide",
-              notes="9:03 · 2 min. What this enables for us: from a one-page description a model writes correct code "
+              notes="9:05 · 2 min. What this enables for us: from a one-page description a model writes correct code "
                     "against Chromhandler and Catalax. What it does not do: know where the peak is, which model is right, "
                     "whether a result is wrong. So today the assistant executes, you decide and check. EnzymeML is the "
                     "document that travels between the steps and the tools.")
@@ -290,7 +321,7 @@ def main():
                              "EnzymeML is the document that travels between the steps and the tools"])
 
     s = slide("Figure", "Concept", "Tools act, skills instruct, you decide",
-              notes="9:05 · 2 min. A language model on its own only writes text. Tools are functions it can call and "
+              notes="9:07 · 2 min. A language model on its own only writes text. Tools are functions it can call and "
                     "whose output it sees: read a file, run Python, make a plot; that is how it reads the peak tables "
                     "and runs Chromhandler and Catalax. Skills are instructions in plain text: our two tool cards, "
                     "chromhandler.md and catalax.md, tell it how each library turns data into insight, peak tables into "
@@ -304,14 +335,14 @@ def main():
 
     s = slide("Title only", "Workflow", "Two tasks, one document in between",
               "Task 1 ends with the EnzymeML document; task 2 starts from it",
-              notes="9:07 · 1 min. Walk through the five boxes left to right. Task 1 covers the first three, task 2 the "
+              notes="9:09 · 1 min. Walk through the five boxes left to right. Task 1 covers the first three, task 2 the "
                     "last three; the EnzymeML document is the handover, which is why anyone stuck in task 1 can start "
                     "task 2 from the checkpoint. Timing: task 1 9:15–10:15, task 2 10:30–11:25.")
     workflow(s)
 
     s = slide("Title only", "Tool 1 · Chromhandler", "Chromhandler: from peak tables to concentrations",
               "Reads the instrument's exports, assigns and calibrates one peak per compound, writes EnzymeML",
-              notes="9:08 · 1 min. Left: what goes in, the peak tables the instrument software exported (one per "
+              notes="9:10 · 1 min. Left: what goes in, the peak tables the instrument software exported (one per "
                     "injection, the reaction time in the file name), the standards with known concentrations, and the "
                     "initial concentrations. Middle: the steps in order; two of them are the scientist's decisions, the "
                     "retention window per session and accepting the calibration. Right: the EnzymeML document and the "
@@ -330,7 +361,7 @@ def main():
 
     s = slide("Title only", "Tool 2 · Catalax", "Catalax: from time courses to kinetic parameters",
               "Builds the ODE model from a rate law and samples the posterior of its parameters",
-              notes="9:09 · 1 min. Left: the EnzymeML document, the rate law, and the assumptions, priors and noise. "
+              notes="9:11 · 1 min. Left: the EnzymeML document, the rate law, and the assumptions, priors and noise. "
                     "Middle: load, define the model, set the priors, sample with Hamiltonian Monte Carlo, then check "
                     "and plot. The model, the priors and the noise are the scientist's decisions; the checks say whether "
                     "the posterior can be trusted. Right: posterior distributions, not point estimates, and the plots.")
@@ -347,7 +378,7 @@ def main():
                         ("Plots", "corner plot; data with the model on top")])
 
     s = slide("Figure", "The experiment", "ManNAc + PEP → Neu5Ac + Pi, followed by HPLC",
-              notes="9:10 · 2 min. Neu5Ac synthase condenses ManNAc and PEP to Neu5Ac and phosphate (metal cofactor, "
+              notes="9:12 · 2 min. Neu5Ac synthase condenses ManNAc and PEP to Neu5Ac and phosphate (metal cofactor, "
                     "water). HPLC-PDA at 215 nm. Two series: ManNAc varied at fixed PEP (13 reactions), PEP varied at "
                     "fixed ManNAc (11 reactions); six injections each; five standards with 1–5 mM. Only the product is "
                     "quantified; the substrates enter the model as their known initial values.")
@@ -358,7 +389,7 @@ def main():
                   "Six injections per reaction; five calibration standards, 1–5 mM"])
 
     s = slide("Content", "The dataset", "Two series, one substrate varied at a time",
-              notes="9:12 · 1 min. Two series: ManNAc varied at fixed PEP (13 reactions), PEP varied at fixed ManNAc "
+              notes="9:14 · 1 min. Two series: ManNAc varied at fixed PEP (13 reactions), PEP varied at fixed ManNAc "
                     "(11 reactions); six injections each, 144 chromatograms; five standards with 1–5 mM Neu5Ac that also "
                     "contain the substrates, no enzyme. Participants do not get the raw traces: the instrument software "
                     "exported a peak table per injection, and that is the input of task 1. Initial concentrations are in "
@@ -374,7 +405,7 @@ def main():
                              "Initial concentrations are in conditions.csv"])
 
     s = slide("Content", "Today", "What we do today",
-              notes="9:13 · 1 min. Task 1 with Chromhandler, task 2 with Catalax. Live demo first, then you work in "
+              notes="9:15 · 1 min. Task 1 with Chromhandler, task 2 with Catalax. Live demo first, then you work in "
                     "pairs; the checks in the task card decide when you are done. Timing: demo 9:15, hands-on 9:30, "
                     "break 10:15–10:30, demo 10:30, hands-on 10:40. At 11:25 we collect everybody's kcat and Km on one "
                     "slide or the whiteboard, wrap-up 11:50.")
@@ -386,7 +417,7 @@ def main():
 
     s = slide("Two columns", "Toolkit", "One repository, two ways to work",
               "github.com/haeussma/enzymeml-workshop-modelling-2026 · start with the README",
-              notes="9:12 · 3 min. README first. Two ways. With a language model: any chat model, free or by "
+              notes="9:16 · 3 min. README first. Two ways. With a language model: any chat model, free or by "
                     "subscription (ChatGPT, Claude, Gemini, …); paste the tool card, then the task card; run the code it "
                     "writes; paste errors back; the checks decide. Without writing code: the Colab link opens a prepared "
                     "notebook with the tools installed and the data loaded; run it cell by cell, change a window, a "
