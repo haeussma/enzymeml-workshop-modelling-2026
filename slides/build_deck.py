@@ -271,6 +271,24 @@ def how_to(s):
                              ("No assistant that runs code? ", "team up"),
                              ("Details: ", "README, section How to do it"),
                              ("Repository: ", "tinyurl.com/enzymeml2026")])
+ICONS = HERE / "assets/icons"
+
+
+def icon_list(s, x, w, heading, items, top=2.2, step=0.95, size=16, icon=0.42):
+    """A heading and rows of (icon, bold lead, rest), left aligned; used for the hands-on slide."""
+    tb = s.shapes.add_textbox(E(x), E(top), E(w), E(0.4)).text_frame
+    tb.margin_left = tb.margin_top = tb.margin_bottom = 0
+    runs(tb.paragraphs[0], heading, bold=True, size=size)
+    y = top + 0.5
+    for name, lead, rest in items:
+        picture(s, ICONS / f"{name}.png", x, y + 0.02, icon, icon, center=False)
+        tf = s.shapes.add_textbox(E(x + icon + 0.2), E(y), E(w - icon - 0.2), E(step - 0.1)).text_frame
+        tf.word_wrap = True
+        tf.margin_left = tf.margin_top = tf.margin_bottom = 0
+        runs(tf.paragraphs[0], lead, bold=True, size=size)
+        runs(tf.paragraphs[0], rest, size=size)
+        y += step
+
 
 # ---- the deck -------------------------------------------------------------------------------
 def main():
@@ -407,17 +425,18 @@ def main():
                     "work. Live demo of task 1 first (9:15), hands-on from 9:30, break 10:15, demo of task 2 10:30, "
                     "hands-on 10:40, comparison of everybody's parameters at 11:25. Those without an assistant that "
                     "runs code team up; those stuck in task 1 start task 2 from the checkpoint.")
-    text(s.placeholders[1], [("Tasks", None),
-                             ("Task 1 · chromatograms to EnzymeML: ", "plot the data, check the assay design, calibrate, "
-                                                                     "export the document"),
-                             ("Task 2 · kinetic parameters: ", "infer k_cat and Km with their uncertainty and "
-                                                              "correlation; does the model describe the data?"),
-                             ("At the end ", "we compare everybody's parameters")])
-    text(s.placeholders[2], [("How to get started", None),
-                             ("Coding assistant on your computer: ", "give it the cards in briefs/"),
-                             ("Chat assistant only: ", "the Colab starter notebook"),
-                             ("No assistant that runs code? ", "team up"),
-                             ("Details: ", "README, sections How to do it, Task 1, Task 2")])
+    drop(s.placeholders[1]); drop(s.placeholders[2])
+    icon_list(s, X, 5.5, "Tasks",
+              [("chart-area-line", "Task 1 · chromatograms to EnzymeML: ",
+                "plot the data, check the assay design, calibrate, export the document"),
+               ("chart-scatter", "Task 2 · kinetic parameters: ",
+                "infer k_cat and Km with their uncertainty and correlation; does the model describe the data?"),
+               ("users-group", "At the end ", "we compare everybody's parameters")], step=1.15)
+    icon_list(s, X + CW - 5.5, 5.5, "How to get started",
+              [("terminal-2", "Coding assistant on your computer: ", "give it the cards in briefs/"),
+               ("message-chatbot", "Chat assistant only: ", "the Colab starter notebook"),
+               ("users", "No assistant that runs code? ", "team up"),
+               ("book-2", "Details: ", "README, sections How to do it, Task 1, Task 2")], step=0.85)
 
     s = slide("Figure", "Reference result", "The reference fit, and an open question",
               notes="11:25 · 25 min. First collect everybody's kcat, Km_ManNAc, Km_PEP: how much do they differ and why "
