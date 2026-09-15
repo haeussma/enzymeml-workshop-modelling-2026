@@ -19,6 +19,8 @@ pip install catalax==0.5.5
 ```
 
 Python 3.11–3.13. Brings `jax`, `diffrax`, `numpyro`, `arviz`, `pyenzyme`, `numpy`, `matplotlib`.
+In Google Colab, pip fails on a dependency's metadata; install with
+`pip install uv && python -m uv pip install --system catalax==0.5.5` instead.
 
 ## First lines of every script
 

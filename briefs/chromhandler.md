@@ -18,6 +18,8 @@ pip install chromhandler==0.10.11
 ```
 
 Python 3.11–3.13. `chromhandler` installs `pyenzyme`, `pandas`, `numpy`, `matplotlib`.
+In Google Colab, pip fails on a dependency's metadata; install with
+`pip install uv && python -m uv pip install --system chromhandler==0.10.11` instead.
 
 ## Read data
 
