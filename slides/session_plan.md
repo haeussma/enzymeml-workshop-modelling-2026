@@ -59,7 +59,9 @@ the one closest to the given retention time and prints a warning with the candid
   ones get NaN arrays (the card says so).
 - Task 2, error about inconsistent states or a shape error: the NaN filling is missing.
 - Task 2, nonsense posterior: `enable_x64()` was not called first.
-- Task 2 takes 10 s here; expect a few minutes in Colab (compilation plus slower CPUs).
+- Task 2 samples in 10 s here and in about 90 s in Colab (measured 15 Sep: install cell 26 s,
+  sampling 88 s, identical posterior). Colab shows "This notebook was not authored by Google"
+  on the first run: click *Run anyway*.
 - Colab: the first cell was skipped; nothing is installed. Run it.
 - The assistant loses the card in a long chat: start a new chat and paste again.
 

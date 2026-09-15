@@ -30,7 +30,8 @@ You need a Google account.
 
 1. Open the notebook for task 1 in Colab:
    <https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/01_hplc_to_enzymeml.ipynb>
-2. Run the first cell. It installs the tools and downloads this repository (about 2 min).
+2. Click *Run anyway* on Colab's "not authored by Google" warning, then run the first cell.
+   It installs the tools and downloads this repository (about 30 s).
 3. Open your AI assistant: Gemini inside Colab (the ✨ icon), or ChatGPT / Claude / any other
    chat in a second browser tab.
 
