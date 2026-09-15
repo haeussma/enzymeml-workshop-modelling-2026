@@ -47,9 +47,13 @@ def person_check():
 
 
 def document_arrows():
+    """An EnzymeML document: the logo in the upper part of the page, text lines below, arrows in and out."""
     fig, ax = canvas()
     ax.add_patch(FancyBboxPatch((3.2, 1.5), 3.6, 7, boxstyle="round,pad=0,rounding_size=0.4", fill=False, lw=LW, ec=INK))
-    for y in (6.8, 5.4, 4.0):
+    logo = plt.imread(OUT.parent / "assets/logos/enzymeml-logo.png")
+    w = 2.2; h = w * logo.shape[0] / logo.shape[1]
+    ax.imshow(logo, extent=(5 - w / 2, 5 + w / 2, 7.6 - h, 7.6), zorder=3)
+    for y in (4.4, 3.2):
         ax.plot([4.2, 5.8], [y, y], lw=LW - 1, color=INK, solid_capstyle="round")
     for x0, x1 in ((0.4, 2.6), (7.4, 9.6)):
         ax.annotate("", xy=(x1, 5), xytext=(x0, 5), arrowprops=dict(arrowstyle="-|>", lw=LW, color=INK, mutation_scale=28))
