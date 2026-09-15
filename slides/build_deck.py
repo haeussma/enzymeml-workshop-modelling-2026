@@ -433,9 +433,9 @@ def main():
                 "infer k_cat and Km with their uncertainty and correlation; does the model describe the data?"),
                ("users-group", "At the end ", "we compare everybody's parameters")], step=1.15)
     icon_list(s, X + CW - 5.5, 5.5, "How to get started",
-              [("terminal-2", "Coding assistant on your computer: ", "give it the cards in briefs/"),
-               ("message-chatbot", "Chat assistant only: ", "the Colab starter notebook"),
-               ("users", "No assistant that runs code? ", "team up"),
+              [("terminal-2", "Route A · coding assistant on your computer: ", "give it the cards in briefs/"),
+               ("message-chatbot", "Route B · chat assistant only: ", "the Colab starter notebook"),
+               ("users", "Route C · no assistant that runs code: ", "team up"),
                ("book-2", "Details: ", "README, sections How to do it, Task 1, Task 2")], step=0.85)
 
     s = slide("Figure", "Reference result", "The reference fit, and an open question",

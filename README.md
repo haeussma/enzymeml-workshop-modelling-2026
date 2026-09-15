@@ -43,33 +43,53 @@ where Neu5Ac elutes: [data/README.md](data/README.md).
 
 ## How to do it
 
-You need an AI assistant and a place where its code runs. Three ways:
+Everything the assistant needs is in `briefs/`, as one-page cards: a **tool card** tells it how
+to use Chromhandler or Catalax, a **task card** tells it what you want from this dataset. Pick
+the route that matches what you have.
 
-1. **A coding assistant on your computer** (Claude Code, Codex, Cursor, …): clone the repository
-   and give the assistant the two cards of the task (below). It installs the tools itself; the
-   tool cards say how.
+### Route A · a coding assistant on your computer
+
+Claude Code, Codex, Cursor or another agent that runs code on your machine.
+
+1. Clone the repository and open it in the agent:
 
    ```bash
    git clone https://github.com/haeussma/enzymeml-workshop-modelling-2026
    ```
 
-2. **A chat assistant only** (ChatGPT, Claude, Gemini, …): open the starter notebook in Google
-   Colab
+2. Give the agent the two cards of the task (task 1: `briefs/chromhandler.md` and
+   `briefs/task_1_chromatograms_to_enzymeml.md`) and write: *Let's start with task 1.*
+3. It installs the tools itself (the tool cards say how) and works through the task. Look at
+   every plot it shows; the decisions are yours.
+
+### Route B · a chat assistant only
+
+ChatGPT, Claude, Gemini or any chat that cannot run code. The code runs in a Google Colab
+notebook instead, and you carry text between the two.
+
+1. Open the starter notebook
    [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/00_start_here.ipynb)
-   (Google account needed; click *Run anyway* on Colab's warning). Its first cell installs the
-   tools and downloads the data, about 30 s. Paste the two cards into the chat, paste the code the
-   assistant writes into new cells, run them, and paste errors and outputs back into the chat.
-   Colab's own Gemini panel (the ✨ icon) can be the assistant.
-3. **No assistant that runs code?** Team up with someone who has one.
+   (Google account needed; click *Run anyway* on Colab's warning) and run its first cell. It
+   installs the tools and downloads the data, about 30 s.
+2. Open the chat in a second tab. Copy the two cards of the task from GitHub
+   (open the file, *Copy raw file*) and paste them into the chat, tool card first, then write:
+   *Let's start with task 1.* Colab's own Gemini panel (the ✨ icon) can be the chat; it sees the
+   notebook and its outputs.
+3. For every snippet the assistant gives you: add a code cell in the notebook, paste, run.
+   Paste the printed output or the error back into the chat; for plots, upload the image.
+4. The assistant asks for decisions, e.g. where the peak is. Those are yours.
 
-The cards are in `briefs/`: a **tool card** tells the assistant how to use Chromhandler or
-Catalax, a **task card** tells it what you want from this dataset. Paste the tool card, then the
-task card, then write: *Let's start with task 1.* Then:
+### Route C · no assistant that runs code
 
-- Run the code it gives you. If there is an error, paste the error back.
-- Look at every plot before you continue. The assistant will ask you for decisions, e.g. where
-  the peak is. Those are yours to make.
-- The task card lists checks. You are done when they pass and you can answer the questions below.
+Team up with someone on route A or B. The decisions and the checks are the interesting part,
+and they take two people as well as one.
+
+### In every route
+
+- Run the code you are given; if there is an error, paste it back.
+- Look at every plot before you continue.
+- The task card lists checks. You are done when they pass and you can answer the questions of
+  the task below.
 
 ## Task 1: from chromatograms to EnzymeML
 
