@@ -32,20 +32,7 @@ Product formation was followed by HPLC. In one series ManNAc was varied (13 reac
 other PEP (11 reactions); each reaction was sampled six times. Five calibration standards contain
 known amounts of Neu5Ac. Details, including where Neu5Ac elutes: [data/README.md](data/README.md).
 
-## Start here
-
-### Option A: Google Colab (nothing to install)
-
-You need a Google account.
-
-1. Open the notebook for task 1 in Colab:
-   <https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/01_hplc_to_enzymeml.ipynb>
-2. Click *Run anyway* on Colab's "not authored by Google" warning, then run the first cell.
-   It installs the tools and downloads this repository (about 30 s).
-3. Open your AI assistant: Gemini inside Colab (the ✨ icon), or ChatGPT / Claude / any other
-   chat in a second browser tab.
-
-### Option B: install on your own computer
+## Install on your own computer
 
 Works on Linux, macOS and Windows with Python 3.11–3.13. Pick one of the three ways; each ends
 with JupyterLab open on the notebooks.
@@ -167,8 +154,14 @@ for the discussion.
 The reference notebooks are open: run them, change a retention window, drop a series from the
 fit, change the model. Ask the assistant to explain any line. Breaking things here costs nothing.
 
-If you do not want to install or run anything but still want to see what the implementation of
-the analysis looks like, open the Colab versions of the two notebooks:
+Nothing to install: Google Colab runs them in the browser (you need a Google account).
+
+1. Open a notebook with one of the buttons below.
+2. Click *Run anyway* on Colab's "not authored by Google" warning, then run the first cell.
+   It installs the tools and downloads this repository (about 30 s). *Runtime → Run all* runs
+   the whole analysis.
+3. For the tasks, open your AI assistant next to it: Gemini inside Colab (the ✨ icon), or
+   ChatGPT / Claude / any other chat in a second browser tab.
 
 | | |
 | --- | --- |
