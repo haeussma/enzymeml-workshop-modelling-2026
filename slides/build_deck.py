@@ -294,7 +294,7 @@ def main():
                     "and the harnesses that let a model execute tools got much better. Next slide shows the models.")
     drop(s.placeholders[1])
     hurdles(s)
-    place(s.placeholders[2], X, 4.55, CW, 1.6)
+    place(s.placeholders[2], X, 4.9, CW, 1.3)
     text(s.placeholders[2], ["Failing installs and unfamiliar code: a hurdle for everyone who does not code daily",
                              "So the data stayed unstructured, and the contemporary methods out of reach",
                              ("Since then: ", "the models got better, and so did the harnesses that let them run tools")])
