@@ -39,8 +39,9 @@ States: `ManNAc`, `PEP`, `Neu5Ac`, `NeuS`. Units mM and min, so `kcat` is in 1/m
    Print the wall time, the summary, and a table of mean, sd and 3–97 % interval per parameter
    (`kcat` also in 1/s).
 4. Run the checks and draw the corner plot.
-5. Simulate the model with the posterior means on a 0–16 min grid; plot data (points) and model
-   (lines) for the ManNAc series (`MAN_*`) and the PEP series (`PEP_*`), one panel each.
+5. Set the posterior means as parameter values and plot data and model with
+   `Dataset.plot(predictor=model)` on the dataset without the NaN arrays: one panel per reaction,
+   ManNAc series (`MAN_*`) and PEP series (`PEP_*`).
 
 ## Checks (expected values)
 

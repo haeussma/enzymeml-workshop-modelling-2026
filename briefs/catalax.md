@@ -124,19 +124,21 @@ jax.block_until_ready(results.get_samples())   # JAX is asynchronous: wait befor
   `results.plot_corner()`, `plot_trace()`, `plot_posterior()`, `plot_forest()`, `plot_ess()`;
   save with `fig.savefig(path, dpi=200, bbox_inches="tight")`.
 
-## Simulate the model for a plot
+## Plot data and model
 
 ```python
 for name in model.get_parameter_order():
-    model.parameters[name].value = float(np.mean(samples[name]))
-config = dataset.to_config()
-config.dt0, config.nsteps = 0.01, None
-grid = jnp.tile(jnp.linspace(0, t_max, 100), (len(dataset.measurements), 1))
-_, states = model.simulate(dataset=dataset, config=config, saveat=grid, return_array=True)
-# states.shape == (n_measurements, 100, n_states); column: model.get_state_order().index("P")
+    model.parameters[name].value = float(np.mean(samples[name]))   # posterior means
+fig = measured.plot(predictor=model, ncols=4, figsize=(3.6, 2.6))   # one panel per measurement
+fig.savefig("fit.png", dpi=200, bbox_inches="tight")
 ```
 
-Data as points, simulation as lines, one colour per measurement.
+`Dataset.plot(ncols=2, measurement_ids=[], figsize=(5, 3), predictor=None, n_steps=100, path=None)`
+draws the data as points and, with `predictor`, the model as lines. Plot the dataset **before**
+the NaN filling (keep a copy, e.g. `measured = dataset.model_copy(deep=True)`): NaN-filled states
+would be drawn as extra lines. `measurement_ids` selects a subset. Do not pass
+`results.get_fitted_model()` as predictor: it carries HDIs, and `plot` then needs data for every
+state.
 
 ## Checks before you report
 
