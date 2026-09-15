@@ -112,9 +112,6 @@ likelihood, log-uniform priors.
 | `Km_PEP` | 0.59 ± 0.07 mM (0.45–0.72) |
 | estimated noise `sigma` | 0.09 mM |
 
-A least-squares fit of the same model gives the same values (364, 1.53, 0.60) with smaller
-standard errors.
-
 One shared `kcat` over-predicts the ManNAc series and under-predicts the PEP series: the two
 series, measured on different days, differ in enzyme activity by roughly 25 %. A good question
 for the discussion.

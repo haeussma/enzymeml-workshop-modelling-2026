@@ -105,8 +105,8 @@ jax.block_until_ready(results.get_samples())   # JAX is asynchronous: wait befor
 - `yerrs` (data units): scale of the prior on the measurement noise, `sigma ~ Normal(0, yerrs)`,
   used as |sigma|; the noise level is estimated and reported as `sigma`. Its sign is arbitrary
   (the chain may sit on the negative side): report the absolute value.
-- The default likelihood `SoftLaplace` is robust (L1-like); its posterior means differ from
-  least squares. `dist.Normal` (Gaussian noise) reproduces least squares.
+- The default likelihood `SoftLaplace` is heavier-tailed (L1-like); `dist.Normal` assumes
+  Gaussian measurement noise.
 - `"parallel"` needs `set_host_device_count`; `"vectorized"` is slow here. 2 chains ×
   (500 + 1000) for 3 parameters and 24 time courses take seconds once compiled.
 
@@ -156,5 +156,3 @@ state.
   `observable=False` somewhere → all observable, NaN fill.
 - "Parameters ... do not have priors": set a prior on every parameter.
 - Nonsense posterior that does not move: `enable_x64()` was not called first.
-- A least-squares point estimate exists too: `ctx.optimize(model, dataset,
-  objective_fun=masked_residual, method="least_squares")`, with a residual that zeroes NaN.
