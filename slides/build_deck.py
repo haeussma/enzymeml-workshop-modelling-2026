@@ -276,12 +276,14 @@ ICONS = HERE / "assets/icons"
 
 def icon_list(s, x, w, heading, items, top=2.2, step=0.95, size=16, icon=0.42):
     """A heading and rows of (icon, bold lead, rest), left aligned; used for the hands-on slide."""
-    tb = s.shapes.add_textbox(E(x), E(top), E(w), E(0.4)).text_frame
-    tb.margin_left = tb.margin_top = tb.margin_bottom = 0
-    lead, rest = heading if isinstance(heading, tuple) else (heading, "")
-    runs(tb.paragraphs[0], lead, bold=True, size=size)
-    runs(tb.paragraphs[0], rest, size=size)
-    y = top + 0.5
+    y = top
+    if heading:
+        tb = s.shapes.add_textbox(E(x), E(top), E(w), E(0.4)).text_frame
+        tb.margin_left = tb.margin_top = tb.margin_bottom = 0
+        lead, rest = heading if isinstance(heading, tuple) else (heading, "")
+        runs(tb.paragraphs[0], lead, bold=True, size=size)
+        runs(tb.paragraphs[0], rest, size=size)
+        y = top + 0.5
     for name, lead, rest in items:
         picture(s, ICONS / f"{name}.png", x, y + 0.02, icon, icon, center=False)
         tf = s.shapes.add_textbox(E(x + icon + 0.2), E(y), E(w - icon - 0.2), E(step - 0.1)).text_frame
@@ -446,6 +448,27 @@ def main():
     text(s.placeholders[2], ["One shared k_cat over-predicts the ManNAc series and under-predicts the PEP series",
                              "The two series were measured on different days and differ by roughly 25 % in activity",
                              "What would you do next?"])
+
+    s = slide("Two columns", "Discussion", "Did it work, and what would you change?",
+              notes="11:25 · 25 min. Open with the round: did it work, what did not, does anyone already work with their "
+                    "data like this for other biocatalysis problems? Then the cards: who read them, what would you add or "
+                    "remove? Documentation: where does the information in the cards live today, papers or lab notebooks, "
+                    "and how would experiment documentation have to change to yield files a model can act on? Access: "
+                    "which models can people use at their university or in their group? Close with the outlook: how are "
+                    "data managed and analysed in five years, and what does that imply for what we do now?")
+    drop(s.placeholders[1]); drop(s.placeholders[2])
+    icon_list(s, X, 5.5, None,
+              [("list-check", "Today: ", "did it work? What did not? Do you already work with your data like this, "
+                                        "for other biocatalysis problems?"),
+               ("file-text", "The cards: ", "did anyone read the instructions given to the language model? "
+                                            "What would you add or remove?"),
+               ("notebook", "Documentation: ", "is this information in publications, in lab notebooks? How would we "
+                                               "document experiments so that a model can act on them?")],
+              step=1.3, size=15)
+    icon_list(s, X + CW - 5.5, 5.5, None,
+              [("key", "Access: ", "which language models can you use at your university, in your group?"),
+               ("telescope", "In five years: ", "how are data managed and analysed? What does that imply for now?")],
+              step=1.3, size=15)
 
     s = slide("Content", "Wrap-up", "What to take home",
               notes="11:50 · 10 min. Take-home and feedback round. Ask explicitly what did not work: that is what we need "
