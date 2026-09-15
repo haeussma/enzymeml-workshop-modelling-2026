@@ -422,19 +422,18 @@ def main():
                              ("Ask the model in Colab ", "to explain any cell")])
 
     s = slide("Content", "Task 1", "Task 1: from chromatograms to EnzymeML",
+              "Result: an EnzymeML document with the Neu5Ac time course of every reaction",
               notes="9:15 · Live demo 15 min, then hands-on 9:30–10:15. Demo: paste chromhandler.md, then the task card, "
                     "then 'Let's start with task 1'. Let the assistant read the data and answer the first question; show "
                     "the peak plot. Accept the calibration explicitly ('my decision, not the assistant's'). Deliberate "
                     "mistake: when asked for the reaction window, say 'the same as the standards'; chromhandler warns "
                     "'No peaks found for Neu5Ac', the document has no Neu5Ac values. Say why (the shift on the peak plot), "
                     "correct it, continue. The questions on the slide are what every pair answers; we compare at 11:25.")
-    text(s.placeholders[1], [("Goal: ", "an EnzymeML document with the calibrated Neu5Ac time course of every reaction"),
-                             ("Your decision: ", "the Neu5Ac retention window, different in standards and reactions"),
-                             ("Questions to answer", None),
-                             "How many reactions and standards are in the data, and what was varied?",
-                             "Where does Neu5Ac elute, in the standards and in the reactions?",
-                             "What is the calibration slope, and how well does the line fit?",
-                             "Does every reaction have all its time points, and which reactions form product?"])
+    text(s.placeholders[1], [("Plot the data: ", "all peaks of all injections; where does Neu5Ac elute?"),
+                             ("Check how the kinetic assay was designed: ", "how many reactions, what was varied, what was fixed?"),
+                             ("Calibrate: ", "what are the calibration parameters, and how well does the line fit?"),
+                             ("Set the retention window ", "for the reactions (it differs from the standards) and assign the peak"),
+                             ("Export the EnzymeML document: ", "every reaction with all its time points; which reactions form product?")])
 
     s = slide("Content", "Task 2", "Task 2: kinetic parameters by Bayesian inference",
               "v = k_cat · [NeuS] · [ManNAc] · [PEP] / ((Km_ManNAc + [ManNAc]) (Km_PEP + [PEP]))",
@@ -443,15 +442,12 @@ def main():
                     "unmeasured ones get NaN arrays (observable=False breaks the sampler in this version). The priors and the "
                     "sampler settings are in the card; they are decisions, say so. Show the posterior table, the trace "
                     "and the fit plot. Those who did not finish task 1 start from checkpoints/neus_enzymeml.json.")
-    text(s.placeholders[1], [("Goal: ", "posterior distributions of k_cat, Km_ManNAc and Km_PEP, with a fit plot"),
-                             ("Model: ", "the enzyme is in the rate law, only Neu5Ac is measured, "
-                                        "the metal cofactor is left out (a simplification)"),
-                             ("Your decisions: ", "the priors, the assumed measurement noise, the sampler settings"),
-                             ("Questions to answer", None),
-                             "What are k_cat, Km_ManNAc and Km_PEP, and how uncertain is each?",
-                             "Do the two chains agree, and were there divergences?",
-                             "Is the posterior clear of the prior bounds, or does a bound decide the answer?",
-                             "Does one model describe both series?"])
+    text(s.placeholders[1], [("Plot the time courses ", "from the EnzymeML document"),
+                             ("Define the model and the priors: ", "the enzyme is in the rate law, only Neu5Ac is measured"),
+                             ("Infer the kinetic parameters: ", "k_cat, Km_ManNAc and Km_PEP, each with its uncertainty"),
+                             ("Check the sampler: ", "do the chains agree, divergences, posterior clear of the prior bounds?"),
+                             ("What is the correlation between the kinetic parameters?", ""),
+                             ("Does one model describe both series? ", "plot data and model together")])
 
     s = slide("Figure", "Reference result", "The reference fit, and an open question",
               notes="11:25 · 25 min. First collect everybody's kcat, Km_ManNAc, Km_PEP: how much do they differ and why "
