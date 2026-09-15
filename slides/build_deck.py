@@ -362,16 +362,10 @@ def main():
                     "retention window per session and accepting the calibration. Right: the EnzymeML document and the "
                     "checks the task card asks for.")
     tool_slide(s,
-               inputs=[("Peak tables", "one export per injection, the time in the file name"),
-                       ("Calibration standards", "exports with known concentrations"),
-                       ("Initial concentrations", "what was in each reaction at t = 0")],
-               steps=[("Read the exports", "read_shimadzu, reaction or calibration mode"),
-                      ("Set the retention window", "your decision, per measurement session"),
-                      ("Assign the peak", "auto_assign: the peak inside the window"),
-                      ("Calibrate", "add_standard, area against concentration; you accept R²"),
-                      ("Export", "to_enzymeml: areas become concentrations")],
-               outputs=[("EnzymeML document", "time courses with their initial conditions"),
-                        ("Checks", "one peak per chromatogram, R², values per reaction")])
+               inputs=[("Peak tables", None), ("Calibration standards", None), ("Initial concentrations", None)],
+               steps=[("Read the exports", None), ("Set the retention window", None), ("Assign the peak", None),
+                      ("Calibrate", None), ("Export", None)],
+               outputs=[("EnzymeML document", None), ("Checks", None)])
 
     s = slide("Title only", "Tool 2 · Catalax", "Catalax: from time courses to kinetic parameters",
               "Builds the ODE model from a rate law and samples the posterior of its parameters",
