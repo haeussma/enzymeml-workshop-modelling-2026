@@ -1,5 +1,5 @@
 [project]
-name = "neus-workshop"
+name = "enzymeml-workshop-modelling-2026"
 version = "0.1.0"
 description = "Workshop: from HPLC chromatograms to enzyme kinetics with Chromhandler, Catalax and an AI assistant"
 readme = "README.md"

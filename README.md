@@ -29,7 +29,7 @@ known amounts of Neu5Ac. Details, including where Neu5Ac elutes: [data/README.md
 You need a Google account.
 
 1. Open the notebook for task 1 in Colab:
-   <https://colab.research.google.com/github/haeussma/neus-workshop/blob/main/notebooks/01_hplc_to_enzymeml.ipynb>
+   <https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/01_hplc_to_enzymeml.ipynb>
 2. Run the first cell. It installs the tools and downloads this repository (about 2 min).
 3. Open your AI assistant: Gemini inside Colab (the ✨ icon), or ChatGPT / Claude / any other
    chat in a second browser tab.
@@ -40,11 +40,11 @@ For people who already use Python or an AI coding agent (Claude Code, Codex, Cur
 Install [uv](https://docs.astral.sh/uv/getting-started/installation/), then:
 
 ```bash
-git clone https://github.com/haeussma/neus-workshop
+git clone https://github.com/haeussma/enzymeml-workshop-modelling-2026
 ```
 
 ```bash
-cd neus-workshop && uv sync
+cd enzymeml-workshop-modelling-2026 && uv sync
 ```
 
 Coding agents can use the tool cards directly: copy `briefs/chromhandler.md` and

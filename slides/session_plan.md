@@ -4,7 +4,7 @@ Hands-on session 2, 7th EnzymeML Workshop. Deck: `slides/workshop.pptx`.
 
 ## Before the session
 
-- Make `github.com/haeussma/neus-workshop` public; open the Colab link from the README once
+- Make `github.com/haeussma/enzymeml-workshop-modelling-2026` public; open the Colab link from the README once
   and run the first cell (install + clone, about 2 min) to be sure it works.
 - Have a chat assistant open in a second window with an empty conversation.
 - Print or share the README link; participants need only that link.
