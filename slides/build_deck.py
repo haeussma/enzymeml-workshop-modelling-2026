@@ -253,6 +253,16 @@ def hurdles(s):
     for x in xs[:-1]:
         line(s, x + bw + 0.06, y + h / 2, x + bw + gap - 0.06, y + h / 2, head=True)
 
+def pillars(s, items):
+    """Columns of icon, bold headline and one grey line; no boxes."""
+    n, gap = len(items), 0.5
+    w = (CW - gap * (n - 1)) / n
+    for i, (icon, head, sub) in enumerate(items):
+        x = X + i * (w + gap)
+        picture(s, FIGS / icon, x + (w - 1.5) / 2, 2.15, 1.5, 1.5)
+        label(s, x, 3.95, w, 0.45, head, size=16, color=INK, bold=True)
+        label(s, x, 4.55, w, 1.4, sub, size=13)
+
 
 # ---- the deck -------------------------------------------------------------------------------
 def main():
@@ -314,10 +324,15 @@ def main():
                     "against Chromhandler and Catalax. What it does not do: know where the peak is, which model is right, "
                     "whether a result is wrong. So today the assistant executes, you decide and check. EnzymeML is the "
                     "document that travels between the steps and the tools.")
-    text(s.placeholders[1], ["Today's models write correct code against our Python APIs from a one-page card",
-                             "They do not know where the peak is, which model is right, when a result is wrong",
-                             "So the scientist decides and checks; the assistant executes",
-                             "EnzymeML is the document that travels between the steps and the tools"])
+    drop(s.placeholders[1])
+    pillars(s, [("icon_card.png", "One page is enough",
+                 "From a one-page card, today's models write working code for our tools"),
+                ("icon_peak.png", "Blind to your data",
+                 "Where the peak is, which model is right, when a result is wrong"),
+                ("icon_person_check.png", "You decide and check",
+                 "The decisions and the checks stay with the scientist; the assistant executes"),
+                ("icon_document_arrows.png", "EnzymeML in between",
+                 "One document carries the data between the steps and the tools")])
 
     s = slide("Figure", "Concept", "Tools act, skills instruct, you decide",
               notes="9:07 · 2 min. A language model on its own only writes text. Tools are functions it can call and "
