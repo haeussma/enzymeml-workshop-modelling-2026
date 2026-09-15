@@ -12,6 +12,16 @@ You will:
 3. infer the parameters of a kinetic model from them, as posterior distributions
    (tool: [Catalax](https://github.com/FAIRChemistry/Catalax)).
 
+## The data come from this paper
+
+> Çakar MM, Milčić N, Andreadaki T, Charnock S, Fessner W-D, Findrik Blažević Z (2024).
+> **Kinetic characterization of two neuraminic acid synthases and evaluation of their application
+> potential.** *Applied Microbiology and Biotechnology* 108, 446.
+> <https://doi.org/10.1007/s00253-024-13277-1>
+
+The HPLC data of the *Neisseria meningitidis* Neu5Ac synthase in this repository were measured
+for that study. If you use the data, cite the paper.
+
 ## The experiment
 
 Neu5Ac synthase (NeuS) condenses two substrates into sialic acid:

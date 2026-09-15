@@ -52,5 +52,3 @@ States: `ManNAc`, `PEP`, `Neu5Ac`, `NeuS`. Units mM and min, so `kcat` is in 1/m
   `Km_ManNAc`–`Km_PEP` ≈ 0.1).
 - `kcat` ≈ 364 ± 6 1/min (≈ 6.1 1/s), `Km_ManNAc` ≈ 1.5 ± 0.2 mM, `Km_PEP` ≈ 0.6 ± 0.07 mM;
   estimated noise `sigma` ≈ 0.09 mM. Sampling takes about 10 s on a laptop, longer in Colab.
-- The plot: the model over-predicts the ManNAc series slightly and under-predicts the PEP
-  series. Point this out to the scientist; the two series were measured on different days.

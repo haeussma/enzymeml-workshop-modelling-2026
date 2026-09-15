@@ -1,5 +1,10 @@
 # The dataset: initial-rate kinetics of Neu5Ac synthase
 
+Source: Çakar MM, Milčić N, Andreadaki T, Charnock S, Fessner W-D, Findrik Blažević Z (2024). Kinetic
+characterization of two neuraminic acid synthases and evaluation of their application potential.
+*Appl Microbiol Biotechnol* 108, 446. <https://doi.org/10.1007/s00253-024-13277-1>. Cite the paper
+if you use the data.
+
 Neu5Ac synthase (NeuS) condenses N-acetylmannosamine (ManNAc) and phosphoenolpyruvate (PEP)
 into N-acetylneuraminic acid (Neu5Ac, sialic acid):
 

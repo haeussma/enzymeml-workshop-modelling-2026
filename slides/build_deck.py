@@ -392,6 +392,7 @@ def main():
                         ("Plots", "corner plot; data with the model on top")])
 
     s = slide("Figure", "The experiment", "ManNAc + PEP → Neu5Ac + Pi, followed by HPLC",
+              cite="Data: Çakar et al. (2024) Kinetic characterization of two neuraminic acid synthases and evaluation of their application potential. Appl. Microbiol. Biotechnol. 108, 446 · doi:10.1007/s00253-024-13277-1",
               notes="9:12 · 2 min. Neu5Ac synthase condenses ManNAc and PEP to Neu5Ac and phosphate (metal cofactor, "
                     "water). HPLC-PDA at 215 nm; the instrument software exported one peak table per injection. Only the "
                     "product is quantified; the substrates enter the model as their known initial values. Do not "
