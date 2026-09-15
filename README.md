@@ -81,10 +81,18 @@ Stuck in task 1? Start task 2 from [checkpoints/neus_enzymeml.json](checkpoints/
    e.g. where the peak is. Those are yours to make.
 4. The task card lists checks with expected values. You are done when all of them pass.
 
-## Try things out
+## Try things out, or just look at the code
 
 The reference notebooks are open: run them, change a retention window, drop a series from the
 fit, change the model. Ask the assistant to explain any line. Breaking things here costs nothing.
+
+If you do not want to install or run anything but still want to see what the implementation of
+the analysis looks like, open the Colab versions of the two notebooks:
+
+| | |
+| --- | --- |
+| Task 1 · chromatograms → EnzymeML | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/01_hplc_to_enzymeml.ipynb) |
+| Task 2 · kinetic model by Bayesian inference | [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/haeussma/enzymeml-workshop-modelling-2026/blob/main/notebooks/02_kinetic_model.ipynb) |
 
 ## What is in this repository
 

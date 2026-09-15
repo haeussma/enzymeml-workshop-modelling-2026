@@ -33,8 +33,7 @@ are Shimadzu LabSolutions ASCII exports with a peak table.
 | `conditions.csv` | Initial concentrations of every reaction and standard, by `sample_id`. |
 
 Each reaction folder holds six exports named `<sample_id>_<minutes>min.txt`, one per sampling
-time from 0 to about 15 min. The calibration standards were measured on 2022-05-28, the
-reactions between 2022-07-19 and 2022-07-27.
+time from 0 to about 15 min.
 
 `conditions.csv` columns: `ManNAc`, `PEP`, `Neu5Ac`, `NeuS` in mM; `enzyme` is the same NeuS
 concentration in mg/mL (0.016 mg/mL in the reaction). `NeuS` = 0.016 g/L ÷ 38 649.8 g/mol =
