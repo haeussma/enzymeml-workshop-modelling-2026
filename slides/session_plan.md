@@ -4,10 +4,10 @@ Hands-on session 2, 7th EnzymeML Workshop. Deck: `slides/workshop.pptx`.
 
 ## Before the session
 
-- Make `github.com/haeussma/enzymeml-workshop-modelling-2026` public; open the Colab link from the README once
-  and run the first cell (install + clone, about 2 min) to be sure it works.
+- The repository is public; open the Colab link from the README once
+  and run the first cell (install + clone, about 30 s) to be sure it works.
 - Have a chat assistant open in a second window with an empty conversation.
-- Print or share the README link; participants need only that link.
+- Share the link: tinyurl.com/enzymeml2026 (also as a QR code on the last slide); participants need only that.
 
 ## Run of show
 

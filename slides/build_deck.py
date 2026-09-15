@@ -415,7 +415,7 @@ def main():
                              "At the end we compare everybody's parameters and discuss"])
 
     s = slide("Two columns", "Toolkit", "One repository, two ways to work",
-              "github.com/haeussma/enzymeml-workshop-modelling-2026 · start with the README",
+              "tinyurl.com/enzymeml2026 · github.com/haeussma/enzymeml-workshop-modelling-2026 · start with the README",
               notes="9:16 · 3 min. README first. Two ways. With a language model: any chat model, free or by "
                     "subscription (ChatGPT, Claude, Gemini, …); paste the tool card, then the task card; run the code it "
                     "writes; paste errors back; the checks decide. Without writing code: the Colab link opens a prepared "
@@ -484,8 +484,11 @@ def main():
                              "The cards are reusable as SKILL.md or AGENTS.md in coding agents",
                              "What did not work for you today is the most useful feedback for us"])
 
-    s = slide("End", None, "Thank you", notes="11:58 · Close. The repository stays up; questions in the break or by mail.")
-    two_lines(s, "github.com/haeussma/enzymeml-workshop-modelling-2026", "Max Häußler · University of Freiburg")
+    s = slide("End", None, "Thank you", notes="11:58 · Close. The repository stays up: tinyurl.com/enzymeml2026, or the "
+                                                 "QR code. Questions in the break or by mail.")
+    two_lines(s, "tinyurl.com/enzymeml2026",
+              "github.com/haeussma/enzymeml-workshop-modelling-2026  ·  Max Häußler · University of Freiburg")
+    picture(s, FIGS / "qr_repository.png", 11.0, 2.35, 1.5, 1.5)
 
     for s in prs.slides:                                 # unused kicker/subtitle/citation prompts
         for ph in list(s.placeholders):
