@@ -42,7 +42,8 @@ Confirm both windows on a plot of all peaks (retention time against area) before
    `add_standard`. Print slope and R².
 4. Add the calibrated Neu5Ac to every reaction handler with the reactions window. Define
    ManNAc and PEP with their initial concentrations from `conditions.csv` (`retention_time=None`)
-   and NeuS as the protein.
+   and NeuS as the protein (N-acetylneuraminic acid synthase, organism *Neisseria meningitidis*,
+   NCBI taxonomy 487).
 5. `to_enzymeml(..., calculate_concentration=True, extrapolate=True)`; save as `neus_enzymeml.json`.
 6. Plot Neu5Ac against time for both series and run the checks.
 

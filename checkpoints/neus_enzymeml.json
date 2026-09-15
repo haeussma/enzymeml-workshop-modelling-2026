@@ -9,15 +9,15 @@
   "proteins": [
     {
       "id": "NeuS",
-      "name": "Neu5Ac synthase",
+      "name": "N-acetylneuraminic acid synthase",
       "constant": true,
       "sequence": null,
       "vessel_id": null,
       "ecnumber": null,
-      "organism": null,
-      "organism_tax_id": null,
+      "organism": "Neisseria meningitidis",
+      "organism_tax_id": "487",
       "references": [],
-      "ld_id": "enzml:Protein/928f5fd7-e20b-4773-934e-51449dbb1e20",
+      "ld_id": "enzml:Protein/8b89e1b7-0e2c-494c-a97a-45249d24b1b7",
       "ld_type": [
         "enzml:Protein",
         "OBO:PR_000000001"
@@ -193,7 +193,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/f211e053-ec90-426f-a6f8-f7ff222effaa",
+          "ld_id": "enzml:MeasurementData/99d9a371-352e-4aea-a48a-a4b8a2c54f7b",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -258,7 +258,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/d127329d-0b1e-4e57-a316-d4420db031db",
+          "ld_id": "enzml:MeasurementData/3d0d99b2-4061-4525-aa0d-f5398c30651e",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -309,7 +309,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/f36edc39-8fd7-4dfb-b282-ec540cbc9c9e",
+          "ld_id": "enzml:MeasurementData/13a4e53d-4c65-4666-b7be-0be5d9c9f7e8",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -360,7 +360,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/301a7508-2156-4b4e-bfb3-0356f8309e0b",
+          "ld_id": "enzml:MeasurementData/d5dc1592-0593-469b-9a26-955b5cbcca28",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -389,7 +389,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/4ad8b3c2-192d-488b-8d27-da51b2e56a09",
+      "ld_id": "enzml:Measurement/afc8b00f-f6d2-483c-81ab-01ef57bfd6da",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -462,7 +462,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/554bfa51-d5c9-43cd-befc-0eb0383a9b84",
+          "ld_id": "enzml:MeasurementData/e196f8ed-f3bd-4c36-b9e5-655109a199e5",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -513,7 +513,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/12af461a-0029-4ed2-8cd8-ecb4832639f0",
+          "ld_id": "enzml:MeasurementData/97dd5359-0332-430f-9ab7-4901e7b6eb49",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -564,7 +564,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/add1387b-cb54-45ce-9d0c-b7dc99ae7719",
+          "ld_id": "enzml:MeasurementData/784ca349-e4d2-4d6d-a3b2-d35b5ca42f60",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -615,7 +615,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/86d7007f-df41-411a-a52f-0ffcbbbeb6b0",
+          "ld_id": "enzml:MeasurementData/73a6bd17-9adf-4871-ac76-39b1af687e73",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -644,7 +644,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/f9cdba4e-f72b-45fd-886f-63712e84d650",
+      "ld_id": "enzml:Measurement/7a7f0220-9a7d-4e6d-8837-f58dbba23cd3",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -717,7 +717,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/19ed3fbc-8237-4707-9646-bd425b0c0d94",
+          "ld_id": "enzml:MeasurementData/fd718a95-8971-4ad4-a709-2bf6267bed4a",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -768,7 +768,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/a698f14e-685d-45d1-97bd-584886f7ed33",
+          "ld_id": "enzml:MeasurementData/d73d2c16-faa5-47bd-9539-c4c2bb74becf",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -819,7 +819,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/987404ac-ad84-4dca-b40e-dc924aa3be26",
+          "ld_id": "enzml:MeasurementData/c94b1a05-5f91-4e18-ade8-c5e3416498a1",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -870,7 +870,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/f0d97e1e-7de8-4423-b86b-dc9d462a4c51",
+          "ld_id": "enzml:MeasurementData/dce78c12-6557-47f1-a46a-fcf3ea383793",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -899,7 +899,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/7fc3631a-b905-4804-b509-79446a964124",
+      "ld_id": "enzml:Measurement/b534f9ba-4a7d-46b1-a7cb-0498900136be",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -972,7 +972,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/7c8b97fb-c819-48f6-a6bb-a3675aaf7097",
+          "ld_id": "enzml:MeasurementData/6746906e-ba13-4dc4-a4b6-38dfdb049dea",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1023,7 +1023,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/01b3b445-07d5-42a7-8df6-0848b3978dc7",
+          "ld_id": "enzml:MeasurementData/cf9bccdf-47b7-4c5d-a1da-492e4ee78e55",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1074,7 +1074,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/ff2b0e94-0ae4-49d6-a40f-e53a6a5c4e63",
+          "ld_id": "enzml:MeasurementData/3a21c45c-062c-463d-a304-3285a6fde89f",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1125,7 +1125,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/7b325740-e97f-44a1-8457-78f2b03f900c",
+          "ld_id": "enzml:MeasurementData/60cf17d2-2973-4b0b-8447-0a3ca08efa48",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1154,7 +1154,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/0d48c7a8-bb16-4da7-a694-95c87d27cb9f",
+      "ld_id": "enzml:Measurement/3690fd11-841d-4443-bd9e-e8b95bc5e7ef",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -1227,7 +1227,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/d6e035b7-3eae-40bf-93e3-890c15974be8",
+          "ld_id": "enzml:MeasurementData/2de492f6-5162-41a7-8de3-b9ad1a089efc",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1278,7 +1278,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/61facd16-9812-4243-bc7e-cd622ae90c7f",
+          "ld_id": "enzml:MeasurementData/ca42539c-af6c-4f2d-a678-50414064c14c",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1329,7 +1329,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/2b9d1685-898d-4b63-b8b7-c53ea2205478",
+          "ld_id": "enzml:MeasurementData/417bfb3f-fc0b-4adc-9007-0185aaf3cac7",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1380,7 +1380,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/3ef7fbf8-93b2-4c48-af84-e8f6e31f562b",
+          "ld_id": "enzml:MeasurementData/337b8861-5e23-4462-bef2-9bcf569932f0",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1409,7 +1409,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/bbae705c-c2a4-470d-a302-f6b524168af4",
+      "ld_id": "enzml:Measurement/42b0184d-072a-4ecd-8bc4-70267abeed51",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -1482,7 +1482,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/5f7c0529-e44a-452c-aa39-a9b83dbf3af4",
+          "ld_id": "enzml:MeasurementData/7a01885c-9948-45d1-b7eb-1d9c135b891e",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1533,7 +1533,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/e29a0628-0029-4dba-87fb-1629ee082057",
+          "ld_id": "enzml:MeasurementData/70f62997-6aaa-4f0e-839d-050e7d498501",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1584,7 +1584,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/eaebe823-0a01-4bee-9a16-50768bba3ec5",
+          "ld_id": "enzml:MeasurementData/fdebe2a4-1254-424d-9691-79b30696a8fc",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1635,7 +1635,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/526a46e4-20b2-4ac4-be23-18e7d942f7ab",
+          "ld_id": "enzml:MeasurementData/9f006e03-a329-473e-8882-bb7608c476aa",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1664,7 +1664,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/5b9eaa2b-7d8d-481c-9de2-de956dc1b1da",
+      "ld_id": "enzml:Measurement/1a4dc974-d9ad-4739-8111-d593084a5cf1",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -1737,7 +1737,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/bfc05c05-4a01-4d2b-9759-73932acf3749",
+          "ld_id": "enzml:MeasurementData/d2fe4dac-03a4-486c-9b4b-1ca24e420829",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1788,7 +1788,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/5f1eb11f-d0b3-4146-be82-c7ce83b7a97c",
+          "ld_id": "enzml:MeasurementData/069539b0-288b-4b01-9297-d006b0b3846c",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1839,7 +1839,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/dac09fc3-ab58-4384-90ef-3387aa91cbde",
+          "ld_id": "enzml:MeasurementData/3ba0104b-02b4-4cb6-a365-0d15bfe88735",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1890,7 +1890,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/a8beca39-ce84-4a32-84a5-6e71e3b8796d",
+          "ld_id": "enzml:MeasurementData/57fe699a-2977-4b02-942a-9be1b15974b8",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -1919,7 +1919,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/585db631-700f-4ca4-b880-7208900dc9ba",
+      "ld_id": "enzml:Measurement/000f3e62-94f6-4c26-91cc-fd2b4b4daadf",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -1992,7 +1992,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/1411dede-1c23-4718-b549-e2fd8e06d677",
+          "ld_id": "enzml:MeasurementData/b34e8f9f-840a-4090-b0de-3c6e95c1c427",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2043,7 +2043,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/23539c2d-fdd8-49c7-a57c-e56e151103ca",
+          "ld_id": "enzml:MeasurementData/02256a2e-4590-4677-b327-9aac4f471694",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2094,7 +2094,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/86afc35e-f48d-4a64-871b-29ead92da3c2",
+          "ld_id": "enzml:MeasurementData/26d804cf-fa51-4de9-b204-dbdfab95a6eb",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2145,7 +2145,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/19585b1b-9324-4b70-8293-21f172230cf7",
+          "ld_id": "enzml:MeasurementData/1be3c1c8-7b28-4a1f-85e6-ac308d8f51f3",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2174,7 +2174,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/58207ab5-ca1e-4fa0-858c-9efcf554f42b",
+      "ld_id": "enzml:Measurement/f04325d5-f0ca-4096-bbff-51cb3cde0896",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -2247,7 +2247,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/3699b4a5-c434-485c-80da-40fbd1ce7adb",
+          "ld_id": "enzml:MeasurementData/e978962a-5e53-4ba4-a0fa-044f579463a4",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2298,7 +2298,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/09705bc0-ac6b-404d-be43-52182c8035a1",
+          "ld_id": "enzml:MeasurementData/1457f2e6-ecc4-4cdf-b3f7-256462fccf07",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2349,7 +2349,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/bdaebeb7-c09e-41e8-b0fe-5c1a6927d1b9",
+          "ld_id": "enzml:MeasurementData/b754c416-bdd5-44ef-acd9-687e9ba14768",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2400,7 +2400,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/c3932025-759b-430b-b16c-958dc627f727",
+          "ld_id": "enzml:MeasurementData/464be015-f813-4be7-be7b-062a084063bb",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2429,7 +2429,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/fbe0569a-7d4a-448f-bd32-5a05c44f2b01",
+      "ld_id": "enzml:Measurement/c9db1296-2a26-47b2-815c-91a401a7c563",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -2502,7 +2502,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/aa3db17b-5fce-40fe-9274-7dc9b38b5055",
+          "ld_id": "enzml:MeasurementData/c4e14822-01ca-4999-b14b-437dc4c1e1c0",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2553,7 +2553,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/ce997610-0c94-4671-a4a7-f35c6d4122cd",
+          "ld_id": "enzml:MeasurementData/3f6a7465-c1b8-4fdc-a03b-8d3aa9afb078",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2604,7 +2604,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/4d7de74a-3499-44ed-b00e-f7437c9e92c5",
+          "ld_id": "enzml:MeasurementData/77490f71-f599-4761-b25d-dac0d5541860",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2655,7 +2655,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/a5e12a15-97ec-4fa3-b2ca-081fc4464745",
+          "ld_id": "enzml:MeasurementData/c4e285b7-8ed6-44dd-8bed-1fd8ce031a03",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2684,7 +2684,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/e59eb23d-fabb-40dd-b577-1fd4204305fc",
+      "ld_id": "enzml:Measurement/aecb6646-244e-4baf-a7c9-2671c2df49a4",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -2757,7 +2757,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/de3f150b-b08b-4ae1-839b-2ee60129b4dd",
+          "ld_id": "enzml:MeasurementData/810d9cea-6a3a-480f-a6ab-939ddc5af51d",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2808,7 +2808,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/db1bb9c3-92ab-4040-9931-f48b86e4ed20",
+          "ld_id": "enzml:MeasurementData/f663c56a-0e0f-4cee-b942-79df36e5c456",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2859,7 +2859,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/395dc616-9b23-4da9-aab2-1acbe3e03fe3",
+          "ld_id": "enzml:MeasurementData/5e82e84b-3c98-41a8-a47d-fbeb30d5c7dc",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2910,7 +2910,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/b3635152-8800-4976-a347-055ac9f90507",
+          "ld_id": "enzml:MeasurementData/f79e8d25-a911-4c56-8d13-90a01e5e5861",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -2939,7 +2939,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/641b034f-18e0-44c4-ab9f-dcdaf66a4072",
+      "ld_id": "enzml:Measurement/9793e3dd-5ff2-4aab-8021-576cf4e78437",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -3012,7 +3012,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/36c19ff3-162d-485c-aadd-9e511a1da204",
+          "ld_id": "enzml:MeasurementData/17536dbb-5fd0-42b8-b78a-1c5c6bd1be30",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3063,7 +3063,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/58d47168-9722-46c3-8bbb-c1d06a764134",
+          "ld_id": "enzml:MeasurementData/4666662e-0f3c-4266-a09e-e9ff0e48556d",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3114,7 +3114,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/d92982e7-560a-4481-bba7-6437e59590f4",
+          "ld_id": "enzml:MeasurementData/242c5d3d-45ee-453f-89bc-72c61e5259ee",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3165,7 +3165,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/96216bd3-acdc-4039-8914-328b17553d17",
+          "ld_id": "enzml:MeasurementData/77cdf460-8745-4cc6-87ef-c49f234abd01",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3194,7 +3194,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/44c1fc59-0c57-4a30-9e6b-0aa15bff5301",
+      "ld_id": "enzml:Measurement/7a4ffb46-5415-4fc3-9e51-e2ed683ad514",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -3267,7 +3267,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/7aa6b3db-3a74-4c9d-8600-0946848ecd08",
+          "ld_id": "enzml:MeasurementData/8fef7d6e-0f54-470c-9621-ef9ed7cfb52d",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3318,7 +3318,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/cd98d8b2-44a8-4cd6-89d9-4c457e0d9983",
+          "ld_id": "enzml:MeasurementData/30d1e67b-7e7e-42f6-b9a0-7ef1fd94f892",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3369,7 +3369,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/08700e48-7c93-44a9-8159-b5761b4da1b1",
+          "ld_id": "enzml:MeasurementData/13defe21-18ec-4671-8713-fa76189b59c4",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3420,7 +3420,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/946e16ae-364f-4d38-abee-ac877bb9da5f",
+          "ld_id": "enzml:MeasurementData/ad38c4b6-ede3-4a21-b02c-81073d6c26b5",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3449,7 +3449,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/50245744-c2d4-4001-87a7-28830a30e104",
+      "ld_id": "enzml:Measurement/a2947a66-648e-4529-9092-8a96abc2961a",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -3522,7 +3522,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/d219a87c-5fd9-46bc-82a7-ce088876c77d",
+          "ld_id": "enzml:MeasurementData/1355f2c3-3305-4432-884e-37fcb039c48d",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3573,7 +3573,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/4d5de2d0-1c66-4a8a-a33a-7becb06108c7",
+          "ld_id": "enzml:MeasurementData/7b00aaaf-5f3d-4e97-aa8a-df97739d157f",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3624,7 +3624,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/3849b571-06e5-4656-995d-e09035930214",
+          "ld_id": "enzml:MeasurementData/879f2f81-c398-402b-a43e-4068c36ebec8",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3675,7 +3675,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/f114a4c7-d961-4a4b-bd4c-0e3a60380450",
+          "ld_id": "enzml:MeasurementData/267a9c06-c0bc-4c17-a9f0-929e535daf15",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3704,7 +3704,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/2447db53-4439-4b27-83d2-0120b1e29492",
+      "ld_id": "enzml:Measurement/e19049b2-c2b1-4321-981f-aa6647914aa5",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -3777,7 +3777,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/1f2bdc6f-ef65-4b7e-88dd-9eca20b0b544",
+          "ld_id": "enzml:MeasurementData/96bc44b4-be3f-428d-bc3b-a8d7f0a7523a",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3828,7 +3828,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/6c427310-efe4-4eb4-8697-573e804f4a5f",
+          "ld_id": "enzml:MeasurementData/10626c7a-f145-4aa9-9017-6627970aea14",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3879,7 +3879,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/a588248d-03bf-4675-b1d5-50e19592cb7f",
+          "ld_id": "enzml:MeasurementData/36432ff0-274d-4b6d-a7c5-61a5ea3b8b7f",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3930,7 +3930,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/6d5e2741-7c83-4e05-8551-706c23714109",
+          "ld_id": "enzml:MeasurementData/5a8161e2-bdae-4108-b6a8-92229b79fc76",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -3959,7 +3959,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/83d1a137-82a7-4ba0-b879-7deac98af877",
+      "ld_id": "enzml:Measurement/97ba9c3a-2ca0-4eeb-9c63-40a898c6f0b9",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -4032,7 +4032,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/0e1a6e84-810b-4c08-8d3e-9a42524e60b7",
+          "ld_id": "enzml:MeasurementData/574f1772-ba24-46ca-b600-18c6fb7aff0d",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4083,7 +4083,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/d0655fd5-06ea-4ac8-ae47-c2ab957612ae",
+          "ld_id": "enzml:MeasurementData/b1f64361-73e9-459f-8687-32b581158772",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4134,7 +4134,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/77a7bf4d-5e77-4bff-842a-0ae16a820c9b",
+          "ld_id": "enzml:MeasurementData/28641c49-0b80-4ea0-a743-61ecebebebf0",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4185,7 +4185,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/cf2e8f5f-92cc-4488-883b-e113503cb271",
+          "ld_id": "enzml:MeasurementData/21b11052-af32-4127-bcd8-eaeaa04d7f3b",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4214,7 +4214,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/5066fb94-24dc-4af9-9329-f9cd11ca243e",
+      "ld_id": "enzml:Measurement/b4457f9d-f796-4690-85af-7a92fa4ac087",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -4287,7 +4287,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/088fc848-4df1-4a88-afeb-146ed2c3a545",
+          "ld_id": "enzml:MeasurementData/45460672-7c18-4776-b073-683b166cb2f5",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4338,7 +4338,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/c19a586e-f6f1-4d2d-81aa-381aa41c0dc8",
+          "ld_id": "enzml:MeasurementData/44ef4cdb-20bc-498b-934a-0239dd724dc5",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4389,7 +4389,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/dac5bbbc-e542-4ce0-a8f3-114e25a0c9be",
+          "ld_id": "enzml:MeasurementData/4469e0cf-ba7b-4b10-abab-3b698afa611e",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4440,7 +4440,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/c506fd4e-3caa-4db3-bc5e-7552e5f16f6c",
+          "ld_id": "enzml:MeasurementData/facc03ad-fb4f-4604-862c-773b8fb3a9a0",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4469,7 +4469,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/75de7404-6df2-4f70-b399-671ba034f22e",
+      "ld_id": "enzml:Measurement/3fc80008-cc79-49bd-9984-255adaacdda7",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -4542,7 +4542,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/1570b54c-352a-4d49-ae67-8ee581d15bcb",
+          "ld_id": "enzml:MeasurementData/7b7025a7-47cf-4991-9b92-56ba6dd3eabd",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4593,7 +4593,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/8f5dbc86-aa05-4a04-8c09-e417cdef518d",
+          "ld_id": "enzml:MeasurementData/243ea5c4-20e6-4a71-9129-247d28aad15e",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4644,7 +4644,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/f755629a-11d3-418d-aca0-9ed67590b714",
+          "ld_id": "enzml:MeasurementData/26fac508-035d-4837-9986-21f7ed733ad5",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4695,7 +4695,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/97646093-5c7b-4b24-8d92-c8d4033387f0",
+          "ld_id": "enzml:MeasurementData/abab7a02-0bba-49ad-a2ae-714341997481",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4724,7 +4724,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/39d8f0b7-998f-4909-a10e-e85c80f5be7a",
+      "ld_id": "enzml:Measurement/08ea47e6-d1ed-45a5-b8d7-0e95a1036947",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -4797,7 +4797,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/ec029e2b-2f88-406e-8000-0807627f2991",
+          "ld_id": "enzml:MeasurementData/982a9e79-c691-46c5-8a2a-1877614b2dfa",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4848,7 +4848,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/50c3092a-c1d4-4697-9fef-2f24da2d1a8e",
+          "ld_id": "enzml:MeasurementData/5ccbacec-2c43-402f-96d1-4b2dede37d59",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4899,7 +4899,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/b67e8bf6-fb38-4af2-99f2-77d6c9258645",
+          "ld_id": "enzml:MeasurementData/6e11681a-a6d2-4439-a6fd-548db3655b6e",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4950,7 +4950,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/574fa787-0809-4fbf-9ec8-9e8841cc81ab",
+          "ld_id": "enzml:MeasurementData/4ef24c73-87f7-48c6-9d26-d2f1dd036de2",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -4979,7 +4979,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/ad42d80d-9135-47f6-ad41-6e9b227a94b0",
+      "ld_id": "enzml:Measurement/a616be88-2b43-43da-9303-ead3489070e1",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -5052,7 +5052,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/3d15552c-c4db-4c16-86d1-9a1023e088cc",
+          "ld_id": "enzml:MeasurementData/e6f26f96-73f5-4f30-9f32-d1569eec37db",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5103,7 +5103,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/4d95f54b-1027-427c-aea6-239d2091e91d",
+          "ld_id": "enzml:MeasurementData/b3ca0e13-47ee-4248-b565-ccce2ddd8c0a",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5154,7 +5154,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/4936a18b-a226-4d51-bedc-30f064f2b0a4",
+          "ld_id": "enzml:MeasurementData/6dca7b2a-591a-41bb-abc2-4662be6916f6",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5205,7 +5205,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/9b1d89e0-0412-4521-b3b0-7fab4e589f70",
+          "ld_id": "enzml:MeasurementData/e4b68936-645f-4dac-845f-78222ec835da",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5234,7 +5234,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/87c490e7-c444-459a-a4ef-e3d1a9ec16cf",
+      "ld_id": "enzml:Measurement/8e35bca3-a536-42bb-823f-9d69eb89c6e3",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -5307,7 +5307,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/b2fab8de-61f4-4372-8629-0efb792b85d6",
+          "ld_id": "enzml:MeasurementData/5fea2027-1cec-4494-bf20-c08ba537b4d1",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5358,7 +5358,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/2bd9fafc-95e6-43eb-ad00-ee551e6e8b11",
+          "ld_id": "enzml:MeasurementData/0b0fbaf4-80cd-4d42-a9dc-a32304c76f9a",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5409,7 +5409,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/34cc5ccf-305b-4e52-bef0-1ceaa3052e99",
+          "ld_id": "enzml:MeasurementData/819d49dc-faa2-431d-8feb-3f0611f9347e",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5460,7 +5460,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/71bbaf79-3fa1-4c99-afd8-fb0249a469f3",
+          "ld_id": "enzml:MeasurementData/8ebfb995-ccc4-46a3-b8bd-ced8becfb904",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5489,7 +5489,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/7e6d7ef0-7933-4561-a051-ac91e4bd08b5",
+      "ld_id": "enzml:Measurement/9c81f1fe-36de-432d-aae4-1cde845b28d8",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -5562,7 +5562,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/087e63b2-6786-4f4f-a9ed-231bdee6c126",
+          "ld_id": "enzml:MeasurementData/ed9eff7f-1a48-442c-b300-21f0bdfea3e7",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5613,7 +5613,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/58f516f4-c03b-4f23-8bd9-607ac994c9fd",
+          "ld_id": "enzml:MeasurementData/da0fc7b5-5206-47a3-b4e3-ca68c0d98bae",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5664,7 +5664,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/45de0223-f890-4d3d-a816-beff0ace1979",
+          "ld_id": "enzml:MeasurementData/500dd54c-61ee-49dc-8e09-0a2432be7b1a",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5715,7 +5715,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/9108738b-dc19-4734-a9a7-799f4ccd88ab",
+          "ld_id": "enzml:MeasurementData/589d4fe0-4ec4-405a-a532-6b0d0a08e489",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5744,7 +5744,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/18ce5580-a202-46ff-8fdd-10f46755dae3",
+      "ld_id": "enzml:Measurement/608f4aa2-83e2-452a-81ee-ffae9afd64f0",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -5817,7 +5817,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/aab9bd98-7ab7-4a2f-a428-7f5af928fa76",
+          "ld_id": "enzml:MeasurementData/e49659d5-bf50-45c5-9ffd-e5160f0b9f3f",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5868,7 +5868,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/5d7482d2-8249-4606-aaf5-361f4c6e78dc",
+          "ld_id": "enzml:MeasurementData/908a0057-b540-4d0a-9526-81430ed91097",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5919,7 +5919,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/d1be2b9d-8d37-4774-b733-1e6c630599c7",
+          "ld_id": "enzml:MeasurementData/d03ab346-beb1-4c74-aec6-b9ce2394660a",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5970,7 +5970,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/40ff2420-95c3-4018-8f34-b269b154d080",
+          "ld_id": "enzml:MeasurementData/0250dcbf-0823-4252-bafc-a87e2b5491a0",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -5999,7 +5999,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/c458f695-f25f-4dde-9347-b51c84d10263",
+      "ld_id": "enzml:Measurement/de572231-155b-460f-b178-82994587dc88",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -6072,7 +6072,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/f1c30f06-6fac-4441-850b-cef6f5b61d6e",
+          "ld_id": "enzml:MeasurementData/7d198ae7-f30b-4045-a310-d2991d892d91",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -6123,7 +6123,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/8a5af30e-2f1c-4948-a92a-676348dbc5ac",
+          "ld_id": "enzml:MeasurementData/55598462-cae2-4fd5-a476-b314d18037d9",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -6174,7 +6174,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/f40a50ea-dcc7-4d63-bba5-4dfc7052b3aa",
+          "ld_id": "enzml:MeasurementData/fb9504b4-52b2-4817-a688-d76d05659342",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -6225,7 +6225,7 @@
           },
           "data_type": "concentration",
           "is_simulated": false,
-          "ld_id": "enzml:MeasurementData/0ce2b530-8fd2-488e-90ad-a65d3654805f",
+          "ld_id": "enzml:MeasurementData/eac7f374-1cc4-4f33-8673-50a2a0d9fdc4",
           "ld_type": [
             "enzml:MeasurementData"
           ],
@@ -6254,7 +6254,7 @@
           }
         ]
       },
-      "ld_id": "enzml:Measurement/13d0a5f3-9e3f-43ed-aea6-7876d7631fc1",
+      "ld_id": "enzml:Measurement/d00ae793-bb2d-47e3-a617-2a79221c1ad1",
       "ld_type": [
         "enzml:Measurement"
       ],
@@ -6275,7 +6275,7 @@
   "equations": [],
   "parameters": [],
   "references": [],
-  "ld_id": "enzml:EnzymeMLDocument/590baa23-54a9-4832-bdd0-5d8cf905d711",
+  "ld_id": "enzml:EnzymeMLDocument/c9364be5-e9d4-4992-96ca-409401bf6f9c",
   "ld_type": [
     "enzml:EnzymeMLDocument"
   ],

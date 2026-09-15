@@ -70,7 +70,8 @@ molecule = handler.define_molecule(id, pubchem_cid, retention_time, retention_to
   area). If no peak lies in the window, nothing is assigned, silently.
 - A species that is not quantified (e.g. a substrate) is defined with `retention_time=None`
   and its `init_conc` / `conc_unit`, so it enters the EnzymeML document with its initial value.
-- The enzyme: `handler.define_protein(id, name, init_conc, conc_unit)`.
+- The enzyme: `handler.define_protein(id, name, init_conc, conc_unit, organism=None,
+  organism_tax_id=None)`; give organism and NCBI taxonomy id when known.
 
 Count assigned peaks after every assignment (peaks whose `molecule_id` equals the molecule id).
 
