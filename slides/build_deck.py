@@ -263,6 +263,19 @@ def pillars(s, items):
         label(s, x, 3.95, w, 0.45, head, size=16, color=INK, bold=True)
         label(s, x, 4.55, w, 1.4, sub, size=13)
 
+def how_to(s, tool_card, task_card, task, extra=None):
+    """Right column of a task slide: the three ways to work, and where the material is."""
+    items = [("How to do it", None),
+             ("Coding assistant on your machine ", f"(Claude Code, Codex, Cursor, …): open the repository, give it "
+                                                    f"{tool_card} and {task_card}, then say: let's start with {task}"),
+             ("Chat assistant only ", "(ChatGPT, Claude, Gemini, …): open the Colab starter notebook from the README, "
+                                     "paste the two cards into the chat, run its code in the notebook"),
+             ("No assistant that runs code? ", "team up with someone who has one")]
+    if extra:
+        items.append(extra)
+    items.append(("Repository, data and cards: ", "tinyurl.com/enzymeml2026"))
+    text(s.placeholders[2], items, size=15)
+
 
 # ---- the deck -------------------------------------------------------------------------------
 def main():
@@ -421,7 +434,7 @@ def main():
                              ("Run it cell by cell; ", "change a window, a prior, a series"),
                              ("Ask the model in Colab ", "to explain any cell")])
 
-    s = slide("Content", "Task 1", "Task 1: from chromatograms to EnzymeML",
+    s = slide("Two columns", "Task 1", "Task 1: from chromatograms to EnzymeML",
               "Result: an EnzymeML document with the Neu5Ac time course of every reaction",
               notes="9:15 · Live demo 15 min, then hands-on 9:30–10:15. Demo: paste chromhandler.md, then the task card, "
                     "then 'Let's start with task 1'. Let the assistant read the data and answer the first question; show "
@@ -433,9 +446,11 @@ def main():
                              ("Check how the kinetic assay was designed: ", "how many reactions, what was varied, what was fixed?"),
                              ("Calibrate: ", "what are the calibration parameters, and how well does the line fit?"),
                              ("Set the retention window ", "for the reactions (it differs from the standards) and assign the peak"),
-                             ("Export the EnzymeML document: ", "every reaction with all its time points; which reactions form product?")])
+                             ("Export the EnzymeML document: ", "every reaction with all its time points; which reactions form product?")],
+         size=15)
+    how_to(s, "briefs/chromhandler.md", "briefs/task_1_chromatograms_to_enzymeml.md", "task 1")
 
-    s = slide("Content", "Task 2", "Task 2: kinetic parameters by Bayesian inference",
+    s = slide("Two columns", "Task 2", "Task 2: kinetic parameters by Bayesian inference",
               "v = k_cat · [NeuS] · [ManNAc] · [PEP] / ((Km_ManNAc + [ManNAc]) (Km_PEP + [PEP]))",
               notes="10:30 · Live demo 10 min, then hands-on 10:40–11:25. Paste catalax.md, then the task card. "
                     "enable_x64 first. Only Neu5Ac has data; in Catalax 0.5.5 every state stays observable and the "
@@ -447,7 +462,10 @@ def main():
                              ("Infer the kinetic parameters: ", "k_cat, Km_ManNAc and Km_PEP, each with its uncertainty"),
                              ("Check the sampler: ", "do the chains agree, divergences, posterior clear of the prior bounds?"),
                              ("What is the correlation between the kinetic parameters?", ""),
-                             ("Does one model describe both series? ", "plot data and model together")])
+                             ("Does one model describe both series? ", "plot data and model together")],
+         size=15)
+    how_to(s, "briefs/catalax.md", "briefs/task_2_kinetic_model.md", "task 2",
+           extra=("No result from task 1? ", "start from checkpoints/neus_enzymeml.json"))
 
     s = slide("Figure", "Reference result", "The reference fit, and an open question",
               notes="11:25 · 25 min. First collect everybody's kcat, Km_ManNAc, Km_PEP: how much do they differ and why "
