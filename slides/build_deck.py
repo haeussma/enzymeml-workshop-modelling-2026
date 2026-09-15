@@ -278,7 +278,9 @@ def icon_list(s, x, w, heading, items, top=2.2, step=0.95, size=16, icon=0.42):
     """A heading and rows of (icon, bold lead, rest), left aligned; used for the hands-on slide."""
     tb = s.shapes.add_textbox(E(x), E(top), E(w), E(0.4)).text_frame
     tb.margin_left = tb.margin_top = tb.margin_bottom = 0
-    runs(tb.paragraphs[0], heading, bold=True, size=size)
+    lead, rest = heading if isinstance(heading, tuple) else (heading, "")
+    runs(tb.paragraphs[0], lead, bold=True, size=size)
+    runs(tb.paragraphs[0], rest, size=size)
     y = top + 0.5
     for name, lead, rest in items:
         picture(s, ICONS / f"{name}.png", x, y + 0.02, icon, icon, center=False)
@@ -286,6 +288,8 @@ def icon_list(s, x, w, heading, items, top=2.2, step=0.95, size=16, icon=0.42):
         tf.word_wrap = True
         tf.margin_left = tf.margin_top = tf.margin_bottom = 0
         runs(tf.paragraphs[0], lead, bold=True, size=size)
+        if rest.startswith("\n"):                       # rest on its own line
+            tf.paragraphs[0].add_line_break(); rest = rest[1:]
         runs(tf.paragraphs[0], rest, size=size)
         y += step
 
@@ -319,7 +323,6 @@ def main():
     two_lines(s, "Max Häußler", "University of Freiburg")
 
     s = slide("Figure", "Looking back", "Last year the code was the hurdle",
-              "Previous hands-on sessions: we installed, read the docs and wrote the analysis code ourselves",
               notes="9:01 · 2 min. Recap of the earlier sessions: we, as humans, wrote the code. Before the first "
                     "plot everyone had to set up a computing environment, read the documentation of the tools for "
                     "extracting and modelling data, and write Python. Installations failed, the code was unfamiliar, "
@@ -331,19 +334,15 @@ def main():
     hurdles(s)
     place(s.placeholders[2], X, 4.5, CW, 1.3)
     text(s.placeholders[2], ["Failing installs and unfamiliar code: a hurdle for everyone who does not code daily",
-                             "So the data stayed unstructured, and the contemporary methods out of reach",
-                             ("Since then: ", "the models got better, and so did the harnesses that let them run tools")])
+                             ("Since then: ", "the models got better!")])
 
-    s = slide("Figure", "Language models since the last workshop", "From 23 to 53 in one year",
-              "The two labs traded the lead several times; the biggest single step was Fable 5 in June 2026",
+    s = slide("Figure", "LLM capabilities", "More than doubled",
               cite="Artificial Analysis Intelligence Index v4.3, artificialanalysis.ai; release dates from the vendors",
               notes="9:03 · 2 min. Dashed line: the 6th workshop, 29 Sep – 2 Oct 2025. Since then the flagship models went "
                     "from about 23 to 53 on the index. The index is an independent benchmark, every model tested the same way. "
                     "The point is that the tool changed a lot in one year, not which lab leads. Keep it short.")
-    figure_slide(s, LLM, ["The Intelligence Index is an independent score from 0 to 100 that combines many tests of "
-                          "knowledge, reasoning, coding and agentic work, with every model tested the same way.",
-                          "Shown are the flagship models of Anthropic and OpenAI that anyone can use, each at its strongest "
-                          "public setting."], top=2.2)
+    drop(s.placeholders[1]); drop(s.placeholders[2])
+    picture(s, LLM, X, 2.2, 7.4, BOTTOM - 2.2, center=False)
 
     s = slide("Content", "Motivation", "The assistant types, you decide",
               notes="9:05 · 2 min. What this enables for us: from a one-page description a model writes correct code "
@@ -352,13 +351,11 @@ def main():
                     "document that travels between the steps and the tools.")
     drop(s.placeholders[1])
     pillars(s, [("icon_card.png", "One page is enough",
-                 "From a one-page card, today's models write working code for our tools"),
-                ("icon_peak.png", "Blind to your data",
-                 "Where the peak is, which model is right, when a result is wrong"),
+                 "Instruct LLM where to find data and how to analyse it"),
                 ("icon_person_check.png", "You decide and check",
                  "The decisions and the checks stay with the scientist; the assistant executes"),
                 ("icon_document_arrows.png", "EnzymeML in between",
-                 "One document carries the data between the steps and the tools")])
+                 "One document carries the data between the steps. LLM writes code to do data science")])
 
     s = slide("Figure", "Concept", "Tools act, skills instruct, you decide",
               notes="9:07 · 2 min. A language model on its own only writes text. Tools are functions it can call and "
@@ -369,12 +366,8 @@ def main():
                     "the decisions and check the results; the model executes.")
     drop(s.placeholders[1])
     concept(s)
-    place(s.placeholders[2], X, 5.65, CW, 0.4)
-    text(s.placeholders[2], ["Tools let the model read the data and run code; skills tell it how our libraries turn "
-                             "data into insight"])
 
     s = slide("Title only", "Workflow", "Two tasks, one document in between",
-              "Task 1 ends with the EnzymeML document; task 2 starts from it",
               notes="9:09 · 1 min. Walk through the five boxes left to right. Task 1 covers the first three, task 2 the "
                     "last three; the EnzymeML document is the handover, which is why anyone stuck in task 1 can start "
                     "task 2 from the checkpoint. Timing: task 1 9:15–10:15, task 2 10:30–11:25.")
@@ -413,13 +406,12 @@ def main():
                     "explain the design or the numbers: how many reactions there are, what was varied and what the "
                     "data look like is what the participants find out with their assistant in task 1.")
     figure_slide(s, FIGS / "reaction_scheme.png",
-                 ["Reactions sampled over time and followed by HPLC-PDA at 215 nm",
-                  "What you get is the instrument's peak table per injection, not the raw trace",
-                  "Only the product Neu5Ac is quantified; calibration standards with known concentrations",
-                  "How many reactions, which conditions, how they were varied: that is in the data"])
+                 ["HPLC-PDA time-course data",
+                  "Raw data: peak tables as instrument output",
+                  "Only the product Neu5Ac is quantified"])
 
-    s = slide("Two columns", "Hands-on", "Two tasks, one repository",
-              "Everything is in the README: tinyurl.com/enzymeml2026",
+    s = slide("Two columns", "Hands-on", "Get started: tinyurl.com/enzymeml2026",
+              "Everything is in the README",
               notes="9:15 · 2 min, then this slide stays on the projector. Task 1 with Chromhandler, task 2 with "
                     "Catalax; the README has the detailed tasks (what to look for in the data) and the three ways to "
                     "work. Live demo of task 1 first (9:15), hands-on from 9:30, break 10:15, demo of task 2 10:30, "
@@ -431,12 +423,12 @@ def main():
                 "plot the data, check the assay design, calibrate, export the document"),
                ("chart-scatter", "Task 2 · kinetic parameters: ",
                 "infer k_cat and Km with their uncertainty and correlation; does the model describe the data?"),
-               ("users-group", "At the end ", "we compare everybody's parameters")], step=1.15)
-    icon_list(s, X + CW - 5.5, 5.5, "How to get started",
+               ("users-group", "At the end ", "we discuss experiences")], step=1.15)
+    icon_list(s, X + CW - 5.5, 5.5, ("How to get started: ", "choose your route"),
               [("terminal-2", "Route A · coding assistant on your computer: ", "give it the cards in briefs/"),
-               ("message-chatbot", "Route B · chat assistant only: ", "the Colab starter notebook"),
-               ("users", "Route C · no assistant that runs code: ", "team up"),
-               ("book-2", "Details: ", "README, sections How to do it, Task 1, Task 2")], step=0.85)
+               ("message-chatbot", "Route B · chat assistant only: ", "\nthe Colab starter notebook"),
+               ("users", "Route C · no assistant that runs code: ", "\nteam up"),
+               ("book-2", "Details: ", "README.md\nsections: How to do it, Task 1, Task 2")], step=0.85)
 
     s = slide("Figure", "Reference result", "The reference fit, and an open question",
               notes="11:25 · 25 min. First collect everybody's kcat, Km_ManNAc, Km_PEP: how much do they differ and why "
