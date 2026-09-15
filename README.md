@@ -8,7 +8,7 @@ You will:
 
 1. read raw chromatograms, find the product peak and calibrate it
    (tool: [Chromhandler](https://github.com/FAIRChemistry/Chromhandler)),
-2. save the concentration time courses as an [EnzymeML](https://enzymeml.org) document,
+2. save the concentration time courses as an EnzymeML document,
 3. infer the parameters of a kinetic model from them, as posterior distributions
    (tool: [Catalax](https://github.com/FAIRChemistry/Catalax)).
 
@@ -24,9 +24,18 @@ for that study. If you use the data, cite the paper.
 
 ## The experiment
 
-Neu5Ac synthase (NeuS) condenses two substrates into sialic acid:
+The enzyme is the N-acetylneuraminic acid synthase of *Neisseria meningitidis* (NeuS, also named
+NeuB or SiaC; UniProt [Q57265](https://www.uniprot.org/uniprotkb/Q57265), 349 residues,
+38.3 kDa). It condenses two substrates into sialic acid and releases phosphate:
 
 ![ManNAc + PEP → Neu5Ac + Pi](slides/figures/reaction_scheme.png)
+
+| Abbreviation | Compound | Role | PubChem CID |
+| --- | --- | --- | --- |
+| ManNAc | N-acetyl-D-mannosamine | substrate | 11096158 |
+| PEP | phosphoenolpyruvate | substrate | 1005 |
+| Neu5Ac | N-acetylneuraminic acid (sialic acid) | product | 439197 |
+| Pi | inorganic phosphate | by-product | 1061 |
 
 Product formation was followed by HPLC; the instrument software exported one peak table per
 injection, and those exports plus the initial concentrations are the data. Details, including

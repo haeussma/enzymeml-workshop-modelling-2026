@@ -5,8 +5,10 @@ characterization of two neuraminic acid synthases and evaluation of their applic
 *Appl Microbiol Biotechnol* 108, 446. <https://doi.org/10.1007/s00253-024-13277-1>. Cite the paper
 if you use the data.
 
-Neu5Ac synthase (NeuS) condenses N-acetylmannosamine (ManNAc) and phosphoenolpyruvate (PEP)
-into N-acetylneuraminic acid (Neu5Ac, sialic acid):
+The N-acetylneuraminic acid synthase of *Neisseria meningitidis* (NeuS, also NeuB or SiaC;
+UniProt [Q57265](https://www.uniprot.org/uniprotkb/Q57265), 349 residues, 38.3 kDa) condenses
+N-acetyl-D-mannosamine (ManNAc) and phosphoenolpyruvate (PEP) into N-acetylneuraminic acid
+(Neu5Ac, sialic acid) and phosphate:
 
 ```
 ManNAc + PEP  →  Neu5Ac + Pi        (NeuS, divalent metal cofactor, H2O)
@@ -17,11 +19,12 @@ ManNAc + PEP  →  Neu5Ac + Pi        (NeuS, divalent metal cofactor, H2O)
 The reaction was followed by HPLC with a photodiode-array detector (215 nm); the chromatograms
 are Shimadzu LabSolutions ASCII exports with a peak table.
 
-| Molecule | Role | PubChem CID | Quantified here |
-| --- | --- | --- | --- |
-| ManNAc | substrate | 11096158 | no |
-| PEP | substrate | 1005 | no (elutes as two peaks) |
-| Neu5Ac | product | 439197 | **yes** |
+| Abbreviation | Compound | Role | PubChem CID | Quantified here |
+| --- | --- | --- | --- | --- |
+| ManNAc | N-acetyl-D-mannosamine | substrate | 11096158 | no |
+| PEP | phosphoenolpyruvate | substrate | 1005 | no (elutes as two peaks) |
+| Neu5Ac | N-acetylneuraminic acid | product | 439197 | **yes** |
+| Pi | inorganic phosphate | by-product | 1061 | no |
 
 ## Files
 
